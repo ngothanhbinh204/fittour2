@@ -1,0 +1,142 @@
+.img-bg-home-3 {
+    background-image: url('img/img-bg-2-home.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.img-banner-all {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg-color-blue {
+    background-color: #019BBD;
+}
+
+.overlay {
+    /* --background-overlay: ''; */
+    background-color: transparent;
+    background-image: linear-gradient(180deg, #00000000 55%, #000000b8 89%);
+}
+
+.overlay-banner-2 {
+    background-color: transparent;
+    background-image: radial-gradient(at center center, #FFFFFF05 0%, #000000 90%);
+}
+
+.overlay-banner-3 {
+    /* --background-overlay: ''; */
+    background-color: #000000;
+}
+
+.bg-banner1 {
+    background-color: #FFE8D3A6;
+}
+
+.bg-main {
+    background-color: #FFE8D3;
+}
+
+.color-main {
+    color: #FF9F49;
+}
+
+.color-second {
+    color: #FF8C00;
+}
+
+.button-home {
+    transition: .3s all;
+}
+
+.button-home:hover {
+    transform: scale(1.2);
+    background-color: #000000A3;
+}
+
+.button-detail-signature {
+    transition: 0.2s all;
+}
+
+.button-detail-signature:hover {
+    transform: translateY(-10px);
+    background-color: #000000A3;
+
+}
+
+.button-color-second {
+    background-color: #04BC44;
+}
+
+.bg-color-main {
+    background-color: #FF9F49;
+    ;
+}
+
+.bg-color-second {
+    background-color: #FF8C00;
+}
+
+.button-color {
+    background-color: #7E6C5C61;
+}
+
+.brands-list {
+    max-width: calc(100% / 5);
+    flex: 0 0 calc(100% / 5);
+    -webkit-box-flex: 0 0 calc(100% / 5);
+}
+
+@media (max-width: 576px) {
+
+    .col-sm-sm {
+        flex: 0 0 auto;
+        width: 33.33333333%;
+    }
+}
+
+@media (max-width: 767px) {
+    .carousel-inner {
+        display: flex;
+    }
+
+    .carousel-item {
+        margin-right: 0;
+        flex: 0 0 50%;
+        display: block;
+    }
+}
+
+@media (min-width: 768px) {
+    .carousel-inner {
+        display: flex;
+    }
+
+    .carousel-item {
+        margin-right: 0;
+        flex: 0 0 20%;
+        display: block;
+    }
+}
+
+.carousel-inner {
+    padding: 1em;
+}
+
+.card {
+    margin: 0.5rem;
+}
+
+.img-wrapper {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
