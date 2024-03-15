@@ -5,6 +5,16 @@
     background-size: cover;
 }
 
+.text-title {
+    color: #565454;
+}
+
+.container-block {
+    display: flex;
+    margin-block-start: 50px;
+    margin-block-end: 50px;
+}
+
 .img-banner-all {
     background-position: center;
     background-repeat: no-repeat;
@@ -155,11 +165,11 @@ img {
     padding: 1em;
 }
 
-.card {
+/* .card {
     margin: 0 0.5em;
     box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
     border: none;
-}
+} */
 
 .carousel-control-prev,
 .carousel-control-next {
