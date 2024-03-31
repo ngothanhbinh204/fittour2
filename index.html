@@ -3,1300 +3,198 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.3/components/heroes/hero-5/assets/css/hero-5.css">
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+    <script src="angular-1.8.2/angular.min.js"></script>
+    <script src="angular-1.8.2/angular-route.js"></script>
+    <!-- boostrap -->
+
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- boostrap -->
+    <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.3/components/heroes/hero-5/assets/css/hero-5.css">
+    <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> -->
+
     <link rel="icon" type="image/x-icon" href="img/favicon-fittour-du-lich-co-gu-300x300.png">
 
-
-    <title>ASM_BootStrap</title>
+    <title>ASM2-AngularJS-Boostrap5.3</title>
 </head>
 
-<style>
-
-</style>
-
-<body>
-    <header>
-        <div class="">
-
-            <div class="row">
-                <div class="d-flex justify-content-between">
-                    <div class="p-2 bd-highlight ">
-                        <img src="img/logoMain.png" alt="">
-                    </div>
-                    <div class="p-2 bd-highlight">
-                        <nav class="navbar navbar-expand-lg navbar-light">
-                            <div class="container-fluid">
-                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                                    aria-expanded="false" aria-label="Toggle navigation">
-                                    <span class="navbar-toggler-icon"></span>
-                                </button>
-
-                                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-bold">
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle color-main" href="#" id="navbarDropdown"
-                                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                Tours
-                                            </a>
-                                            <ul style="width: 800px;" class="dropdown-menu"
-                                                aria-labelledby="navbarDropdown">
-                                                <li><a class="dropdown-item fw-bold" href="tour.html">Tours</a></li>
-                                                <li>
-                                                    <div class="container p-4">
-                                                        <div class="row">
-                                                            <h1 class="fw-bold">Tour</h1>
-                                                            <div class="col-sm-12 col-lg-3 fw-semibold">
-                                                                <h5 class="fw-bold">Himalayas</h5>
-                                                                <div class="item d-flex">
-                                                                    <i
-                                                                        class="bi bi-arrow-right-circle-fill mx-2 color-main"></i>
-                                                                    <span>Ladakh</span>
-                                                                </div>
-                                                                <div class="item d-flex">
-                                                                    <i
-                                                                        class="bi bi-arrow-right-circle-fill mx-2 color-main"></i>
-                                                                    <span>Ladakh</span>
-                                                                </div>
-                                                                <div class="item d-flex">
-                                                                    <i
-                                                                        class="bi bi-arrow-right-circle-fill mx-2 color-main"></i>
-                                                                    <span>Ladakh</span>
-                                                                </div>
-                                                                <div class="item d-flex">
-                                                                    <i
-                                                                        class="bi bi-arrow-right-circle-fill mx-2 color-main"></i>
-                                                                    <span>Ladakh</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-sm-12 col-lg-3 fw-semibold">
-                                                                <h5 class="fw-bold">Trung Đông</h5>
-                                                                <div class="item d-flex">
-                                                                    <i
-                                                                        class="bi bi-arrow-right-circle-fill mx-2 color-main"></i>
-                                                                    <span>Ladakh</span>
-                                                                </div>
-
-                                                                <div class="item d-flex">
-                                                                    <i
-                                                                        class="bi bi-arrow-right-circle-fill mx-2 color-main"></i>
-                                                                    <span>Ladakh</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-sm-12 col-lg-3 fw-semibold">
-                                                                <h5 class="fw-bold">Silk Road</h5>
-                                                                <div class="item d-flex">
-                                                                    <i
-                                                                        class="bi bi-arrow-right-circle-fill mx-2 color-main"></i>
-                                                                    <span>Tân Cương</span>
-                                                                </div>
-                                                                <div class="item d-flex">
-                                                                    <i
-                                                                        class="bi bi-arrow-right-circle-fill mx-2 color-main"></i>
-                                                                    <span>Pakistan </span>
-                                                                </div>
-                                                                <div class="item d-flex">
-                                                                    <i
-                                                                        class="bi bi-arrow-right-circle-fill mx-2 color-main"></i>
-                                                                    <span>Iran</span>
-                                                                </div>
-                                                                <div class="item d-flex">
-                                                                    <i
-                                                                        class="bi bi-arrow-right-circle-fill mx-2 color-main"></i>
-                                                                    <span>Ladakh</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-sm-12 col-lg-3 fw-semibold">
-                                                                <h5 class="fw-bold">Việt Nam</h5>
-                                                                <div class="item d-flex">
-                                                                    <i
-                                                                        class="bi bi-arrow-right-circle-fill mx-2 color-main"></i>
-                                                                    <span>Quảng Bình</span>
-                                                                </div>
-                                                                <div class="item d-flex">
-                                                                    <i
-                                                                        class="bi bi-arrow-right-circle-fill mx-2 color-main"></i>
-                                                                    <span>Tây Bắc</span>
-                                                                </div>
-
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-
-                                            </ul>
-                                        </li>
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-                                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                Phong cách GUU
-                                            </a>
-                                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                                <li>
-                                                    <hr class="dropdown-divider">
-                                                </li>
-                                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link color-main" aria-current="page"
-                                                href="lichtrinhtour.html">Lịch Tour Nước
-                                                Ngoài</a>
-                                        </li>
-                                        <li class="nav-item ">
-                                            <a class="nav-link color-main" href="gallery.html">Gallery</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link color-main" href="blog.html">Blog</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link color-main" href="gioithieu.html">Giới Thiệu</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link color-main" href="contact.html">Liên Hệ</a>
-                                        </li>
-
-                                    </ul>
-
-                                </div>
-                            </div>
-                        </nav>
-                    </div>
-                    <div class="p-2 bd-highlight align-items-center">
-                        <div class="box mt-3">
-
-                            <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal"
-                                data-bs-target="#nhapluong">
-                                <i class="bi bi-search"></i>
-                            </button>
-
-                            <div class="modal" id="nhapluong">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-
-                                        <!-- Modal Header -->
-                                        <div class="modal-header">
-                                            <form class="d-flex input-group my-3" role="search">
-                                                <input class="form-control" type="search"
-                                                    placeholder="Tìm kiếm hình ảnh ..." aria-label="Search">
-                                                <span class="input-group-text bg-black"><i
-                                                        class="bi bi-search text-white"></i></span>
-                                            </form> <button type="button" class="btn-close"
-                                                data-bs-dismiss="modal"></button>
-                                        </div>
-
-                                        <!-- Modal body -->
-                                        <div class="modal-body p-4">
-                                            <div class="box-content mb-4">
-                                                <h6 class="fw-bold">Best Seller :</h6>
-                                                <ul>
-                                                    <li>Tour Ai Cập</li>
-                                                    <li>Tour Ladakh (Road Trip)</li>
-                                                </ul>
-                                            </div>
-                                            <div class="box-content mb-4">
-                                                <h6 class="fw-bold">Emagazine Travel :</h6>
-                                                <ul>
-                                                    <li>Tour Ai Cập</li>
-                                                    <li>Tour Ladakh (Road Trip)</li>
-                                                </ul>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-6">
-                                                    <img src="img/sp1.jpg" alt="">
-                                                    <p class="fw-bold color-main">Tour Motor Adventure Morocco 13 ngày -
-                                                        Núi, Sa mạc và ốc đảo</p>
-                                                </div>
-                                                <div class="col-6">
-                                                    <img src="img/sp2.jpg" alt="">
-                                                    <p class="fw-bold color-main">Tour Motor Adventure Morocco 13 ngày -
-                                                        Núi, Sa mạc và ốc đảo</p>
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <section class="bsb-hero-5 px-3" style="background-image: url('img/banner-1.jpg');">
-        <div style="min-height: 550px;" class="container-fluid position-relative d-flex align-items-center">
-            <div class="container-xxl">
-                <div class="">
-                    <div style="height: 100%;" class="col-12 col-md-11 col-lg-9 col-xl-8 col-xxl-7 d-flex">
-                        <div style="width: 620px;"
-                            class=" col-md-5 p-lg-5  box-content-banner bg-banner1 rounded-4 p-3">
-                            <h3 class="fw-bold mb-4">FIT TOUR: Du lịch có Guu
-                            </h3>
-                            <p class="">
-                                <span class="col-12 col-sm-10 col-md-8 col-xxl-7">Fit Tour là đội ngũ với hơn 12 năm
-                                    kinh
-                                    nghiệm điều hành tour.
-                                    Chúng tôi đã đi qua 65 quốc gia, 270 thành phố và phục vụ hơn 120 đơn vị.</span>
-                            </p>
-                            <p class="fw-bold ">
-                                <span class="col-12 col-sm-10 col-md-8 col-xxl-7">Không chỉ thiết kế tour, chúng tôi
-                                    thiết
-                                    kế trải nghiệm trên mỗi chuyến đi.</span>
-                            </p>
-                            <div class="d-grid gap-3 d-sm-flex mt-2">
-                                <div class=" text-white fs-6 fw-semibold btn bsb-btn-2xl bg-color-main rounded-4">
-                                    <a class="text-decoration-none text-white" href="lichtrinhtour.html">Lịch Tour</a>
-                                </div>
-                                <div
-                                    class="text-white button-color  fs-6 fw-semibold btn bsb-btn-2xl btn-outline rounded-4 border border-2">
-                                    Tư vấn ngay
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <div class="container-xxl ">
-            <div class="row mt-5 mb-5">
-                <div class="col-lg-2 col-md-4 col-sm-4 text-center col-sm-sm">
-                    <div class="card border-0">
-                        <img class=" img-fluid border-0 img-thumbnail p-3" src="img/lich-trinh-tour-du-lich-icon.png"
-                            alt="">
-                        <a href="#" class=" text-dark fw-semibold text-decoration-none">Lịch khởi hành</a>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4 col-sm-4 text-center col-sm-sm">
-                    <div class="card border-0">
-                        <img class=" img-fluid border-0 img-thumbnail p-3" src="img/tour-2024-du-lich-nuoc-ngoai.png"
-                            alt="">
-                        <a href="#" class=" text-dark fw-semibold text-decoration-none ">Tour nước ngoài</a>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4 col-sm-4 text-center col-sm-sm">
-                    <div class="card border-0">
-                        <img class=" img-fluid border-0 img-thumbnail p-3" src="img/icon-team-building.jpg" alt="">
-                        <a href="#" class=" text-dark fw-semibold text-decoration-none  ">Team Buiding</a>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4 col-sm-4 text-center col-sm-sm">
-                    <div class="card border-0">
-                        <img class=" img-fluid border-0 img-thumbnail p-3" src="img/icon-tour-mua-thu.png" alt="">
-                        <a href="#" class=" text-dark fw-semibold text-decoration-none  ">Tour mùa thu</a>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4 col-sm-4 text-center col-sm-sm">
-                    <div class="card border-0">
-                        <img class=" img-fluid border-0 img-thumbnail p-3" src="img/icon-dich-vu-visa.jpg" alt="">
-                        <a href="#" class=" text-dark fw-semibold text-decoration-none  ">Dịch vụ Visa</a>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4 col-sm-4 text-center col-sm-sm">
-                    <div class="card border-0">
-                        <img class=" img-fluid border-0 img-thumbnail p-3" src="img/trekking-adventures-icon.png"
-                            alt="">
-                        <a href="#" class=" text-dark fw-semibold text-decoration-none   text-center">Trekking &
-                            Adventures</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <div class="container-xxl">
-            <div class="row">
-                <h3 class="fw-bold">Những vùng đất thú vị để khám phá</h3>
-                <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner p-3  scroll-container">
-                        <div class="carousel-item scroll-item " data-bs-interval="10000">
-                            <div class="card border-0">
-                                <div class="img-wrapper justify-content-center align-items-center d-flex">
-                                    <img class="rounded-3 shadow" src="img/standee-tour-con-duong-to-lua-240x300.jpg"
-                                        alt="...">
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title fw-bold">Tour con đường Tơ Lụa</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item scroll-item" data-bs-interval="1000">
-                            <div class="card border-0">
-                                <div class="img-wrapper justify-content-center align-items-center d-flex">
-                                    <img class="rounded-3 shadow"
-                                        src="img/standee-tour-san-bac-cuc-quang-2024-240x300.jpg" alt="...">
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title fw-bold">Tour Săn cực quang Iceland</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item scroll-item">
-                            <div class="card border-0">
-                                <div class="img-wrapper justify-content-center align-items-center d-flex">
-                                    <img class="rounded-3 shadow" src="img/standee-tour-xe-may-chau-au-240x300.jpg"
-                                        alt="...">
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title fw-bold">Tour Săn cực quang Iceland</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item scroll-item">
-                            <div class="card border-0">
-                                <div class="img-wrapper justify-content-center align-items-center d-flex">
-                                    <img class="rounded-3 shadow" src="img/standee-tour-trung-quoc-2024-240x300.jpg"
-                                        alt="...">
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title fw-bold">Tour hành trình Trung Hoa</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item scroll-item" data-bs-interval="1000">
-                            <div class="card border-0">
-                                <div class="img-wrapper justify-content-center align-items-center d-flex">
-                                    <img class="rounded-3 shadow" src="img/tour-ai-cap-standee-240x300.jpg" alt="...">
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title fw-bold">Tour Ai Cập</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item scroll-item">
-                            <div class="card border-0">
-                                <div class="img-wrapper justify-content-center align-items-center d-flex">
-                                    <img class="rounded-3 shadow" src="img/standee-tour-himalayas-2024-240x300.jpg"
-                                        alt="...">
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title fw-bold">Tour Himalayas</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item scroll-item" data-bs-interval="1000">
-                            <div class="card border-0">
-                                <div class="img-wrapper justify-content-center align-items-center d-flex">
-                                    <img class="rounded-3 shadow" src="img/standee-tour-xe-may-chau-au-240x300.jpg"
-                                        alt="...">
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title fw-bold">Tour Adventure</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev top-50" type="button" data-bs-target="#carouselExampleInterval"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next top-50" type="button" data-bs-target="#carouselExampleInterval"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <div class="container-fluid bg-main">
-            <div class="container-xxl py-5">
-                <div class="row">
-                    <div class="col-12 text-center">
-                        <div class="title fw-bold fs-3">
-                            SIGNATURE TOUR
-                        </div>
-                        <!-- Line  -->
-                    </div>
-                </div>
-
-
-                <div class="row ">
-                    <div class="gr-icon d-flex align-items-center justify-content-center">
-                        <hr class="mb-4 mt-0 mx-3 mt-3 border-0"
-                            style="width: 230px; opacity: 1; background-color: #ff8c00; height: 4px" />
-                        <i class="bi bi-star-fill fs-3 justify-content-center text-center"></i>
-                        <hr class="mb-4 mt-0 mx-3 mt-3 border-0"
-                            style="width: 230px; opacity: 1; background-color: #ff8c00; height: 4px" />
-                    </div>
-                </div>
-
-
-                <div class="card my-5 border-0 ">
-                    <div class="row d-flex">
-                        <div class="col-md-4 align-self-center">
-                            <img src="img/ho-muoi-o-siwa-ai-cap-768x432.jpg"
-                                class="img-fluid object-fit-cover align-middle" alt="...">
-                        </div>
-                        <div class="col-md-5 d-flex">
-                            <div class="card-body align-self-center">
-                                <div
-                                    class="text-white button-color-second  fs-6 fw-semibold btn  btn-sm rounded-4 border-2 my-2">
-                                    Châu Phi
-                                </div>
-                                <h5 class="card-title text-uppercase fw-bold color-main ">Tour du lịch ai cập - hành
-                                    trình chạm
-                                    và kỳ quan
-                                </h5>
-                                <p class="card-text fst-small py-2 lh-base">Du thuyền sông Niles, ốc đảo Siwa, Kim tự
-                                    tháp Giza,đi khinh khí cầu ở Luxor…</p>
-                                <p class="card-text"><small class="">Thời gian : <strong>10 ngày 9
-                                            đêm</strong></small></p>
-                            </div>
-                        </div>
-
-                        <div class="col-md-3 d-flex ">
-                            <div class="card-body align-self-center text-center">
-                                <h5 class="card-title text-muted fw-semibold">Giá từ</h5>
-                                <p class="card-text fw-bold fs-4 text-danger">83.990.000 VND</p>
-                                <div
-                                    class=" button-detail-signature text-uppercase text-white bg-color-second fs-6 fw-semibold btn bsb-btn-2xl btn-outline rounded-2 border border-0">
-                                    <a href="detail.html">Xem Chi Tiết</a>
-
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="card my-5 border-0 ">
-                    <div class="row d-flex">
-                        <div class="col-md-4 align-self-center">
-                            <img src="img/du-lich-leh-ladakh-dulichcoguu-768x432.jpg"
-                                class="img-fluid object-fit-cover align-middle" alt="...">
-                        </div>
-                        <div class="col-md-5 d-flex">
-                            <div class="card-body align-self-center">
-                                <div
-                                    class="text-white bg-primary-subtle text-primary-emphasis  fs-6 fw-semibold btn  btn-sm rounded-4 border-2 my-2">
-                                    Himalayas
-                                </div>
-                                <h5 class="card-title text-uppercase fw-bold color-main ">Tour du lịch Ladakh - Chuyến
-                                    đi roadtrip
-                                </h5>
-                                <p class="card-text fst-small py-2 lh-base">Hành trình Roadtrip thú vị khám phá vùng đất
-                                    Ladakh, tham quan các thánh hồ Pangong, Tso Moriri, cưỡi lạc đã ở thung lũng Nubra,…
-                                </p>
-                                <p class="card-text"><small class="">Thời gian : <strong>10 ngày 10 đêm</strong></small>
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="col-md-3 d-flex ">
-                            <div class="card-body align-self-center text-center">
-                                <h5 class="card-title text-muted fw-semibold">Giá từ</h5>
-                                <p class="card-text fw-bold fs-4 text-danger">47.490.000 VND</p>
-                                <div
-                                    class=" button-detail-signature text-uppercase text-white bg-color-second fs-6 fw-semibold btn bsb-btn-2xl btn-outline rounded-2 border border-0">
-                                    Xem Chi Tiết
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="card my-5 border-0 ">
-                    <div class="row d-flex">
-                        <div class="col-md-4 align-self-center">
-                            <img src="img/tour-motor-chau-au-fittour-768x432.jpg"
-                                class="img-fluid object-fit-cover align-middle" alt="...">
-                        </div>
-                        <div class="col-md-5 d-flex">
-                            <div class="card-body align-self-center">
-
-                                <h5 class="card-title text-uppercase fw-bold color-main ">Motor tour châu âu 16 ngày dãy
-                                    alps: Đức, áo, ý, thụy sĩ, pháp
-                                </h5>
-                                <p class="card-text fst-small py-2 lh-base">Chuyến tham quan được hỗ trợ đầy đủ hậu cần
-                                    với Leader địa phương, leader người Việt, Backup truck, thợ sửa xe đi cùng, vé tham
-                                    quan trọn gói.</p>
-                                <p class="card-text"><small class="">Thời gian : <strong>10 ngày 9
-                                            đêm</strong></small></p>
-                            </div>
-                        </div>
-
-                        <div class="col-md-3 d-flex ">
-                            <div class="card-body align-self-center text-center">
-                                <h5 class="card-title text-muted fw-semibold">Giá từ</h5>
-                                <p class="card-text fw-bold fs-4 text-danger">Liên Hệ</p>
-                                <div
-                                    class=" button-detail-signature text-uppercase text-white bg-color-second fs-6 fw-semibold btn bsb-btn-2xl btn-outline rounded-2 border border-0">
-                                    Xem Chi Tiết
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="card my-5 border-0 ">
-                    <div class="row d-flex">
-                        <div class="col-md-4 align-self-center">
-                            <img src="img/ho-muoi-o-siwa-ai-cap-768x432.jpg"
-                                class="img-fluid object-fit-cover align-middle" alt="...">
-                        </div>
-                        <div class="col-md-5 d-flex">
-                            <div class="card-body align-self-center">
-                                <div
-                                    class="text-white button-color-second  fs-6 fw-semibold btn  btn-sm rounded-4 border-2 my-2">
-                                    Châu Phi
-                                </div>
-                                <h5 class="card-title text-uppercase fw-bold color-main ">Tour du lịch Maroc 12 ngày 11
-                                    đêm
-                                </h5>
-                                <p class="card-text fst-small py-2 lh-base">Cắm trại ở sa mạc Sahara ngắm trời sao, tham
-                                    quan thành phố xanh Chefchaouen, khám phá cố đô Fes, Marrakech,…</p>
-                                <p class="card-text"><small class="">Thời gian : <strong>12 ngày 11
-                                            đêm</strong></small></p>
-                            </div>
-                        </div>
-
-                        <div class="col-md-3 d-flex ">
-                            <div class="card-body align-self-center text-center">
-                                <h5 class="card-title text-muted fw-semibold">Giá từ</h5>
-                                <p class="card-text fw-bold fs-4 text-danger">83.990.000 VND</p>
-                                <div
-                                    class=" button-detail-signature text-uppercase text-white bg-color-second fs-6 fw-semibold btn bsb-btn-2xl btn-outline rounded-2 border border-0">
-                                    Xem Chi Tiết
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row  ">
-                    <div class="box-button-submit d-flex justify-content-center">
-                        <!-- <button type="button"
-                            class=" p-4  text-uppercase text-center btn-lg text-white bg-color-second fs-6 fw-semibold btn  btn-outline rounded-4 border border-2">Xem
-                            lịch trình tour cụ thể</button> -->
-
-                    </div>
-
-                </div>
-
-                <div class="d-grid gap-2 col-lg-4 col-md-6 col-sm-6  mx-auto">
-                    <button
-                        class=" button-home btn-lg p-3 text-uppercase text-white bg-color-second fw-bold btn tn-outline rounded-4 border border-2"
-                        type="button">Xem lịch trình tour cụ thể</button>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <div class="container-xxl">
-            <div style="margin: 80px 0px;" class="row ">
-                <div class="col-lg-6 col-sm-12 d-flex align-items-center">
-                    <div class="d-grid gap-4 mx-auto ">
-                        <div class="title">
-                            <h3 class="fw-bold text-center">Hành trình Ladakh cùng Fit Tour</h3 class="fw-bold">
-                        </div>
-                        <button
-                            class="btn-lg p-3 text-white bg-color-main fs-6 fw-bold btn  btn-outline rounded-4 border border-0"
-                            type="button">Emagazine Nhật Ký Ladakh Bằng Xe Máy
-                        </button>
-                        <button class="btn-lg p-3 button-color fs-6 fw-bold btn  btn-outline rounded-4 border border-0"
-                            type="button">Emagazine Hành Trình Zanskas Ở Ladakh
-                        </button>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-sm-12">
-                    <div class="embed-responsive embed-responsive-16by9 mt-2">
-                        <iframe class="w-100 py-2 " height="315"
-                            src="https://www.youtube.com/embed/z391E4LXHIU?si=rxPORPdhTTESLGcT"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen></iframe>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="bsb-hero-5 px-3 my-3">
-        <div style="background-image: url('img/img-bg-2-home.jpg');"
-            class=" container-xxl g-0 position-relative align-items-center img-bg-home-3 shadow  bg-body-tertiary rounded-4 pt-2 ">
-            <div style="min-height: 520px;"
-                class=" overlay col-12 p-lg-5 box-content-banner p-3 d-flex flex-column justify-content-end align-items-start">
-                <h3 class="fw-bold mb-4 text-white">Đi du lịch nước ngoài 2024 ở đâu vui?
-                </h3>
-                <p class="">
-                    <span class="col-12 col-sm-10 col-md-8 col-xxl-7 text-white">Những ý tưởng để bắt đầu kế
-                        hoạch du
-                        lịch của bạn—chỉ cần lưu lại những gì bạn yêu thích và gọi cho chúng tôi chuẩn
-                        bị</span>
-                </p>
-
-                <div class=" d-sm-flex mt-2">
-                    <div class=" text-white fs-6 fw-semibold btn bsb-btn-2xl bg-color-main rounded-4">
-                        Xem ngay nào
-                    </div>
-
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <div class="container-xxl mt-5">
-            <div class="row">
-                <h2 class="fw-bold">Điểm Đến Được Yêu Thích</h2>
-            </div>
-            <div class="row p-4 justify-content-around ">
-                <div class="col-sm-12 col-md-5 col-lg-5">
-                    <div class="row img-banner-all rounded-4"
-                        style="background-image: url('img/img-banner-3.jpg'); min-height: 155px;">
-
-                        <div
-                            class="col-12 col-6 d-flex flex-row flex-wrap justify-content-between align-self-center px-4">
-                            <div class="name">
-                                <h3 class="text-white">Himalayas</h3>
-                            </div>
-                            <div style="--bs-bg-opacity: .25;"
-                                class="text-white button-color text-uppercase  fs-6 fw-semibold btn bsb-btn-2xl btn-outline rounded-5 border bg-secondary bg-gradient border-2 ">
-                                All
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="row">
-                        <div class="col-6">
-                            <ul class="list-unstyled">
-                                <li>Ladakh</li>
-                                <li>Bhutan</li>
-                            </ul>
-                        </div>
-                        <div class="col-6">
-                            <ul class="list-unstyled">
-                                <li>Nepal</li>
-                                <li>Tây Tạng</li>
-                                <li>Sikkim</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-5 col-lg-5">
-
-                    <div class="row img-banner-all rounded-4"
-                        style="background-image: url('img/img-banner-4.jpg'); min-height: 155px;">
-
-                        <div
-                            class="col-12 col-6 d-flex flex-row flex-wrap justify-content-between align-self-center px-4">
-                            <div class="name">
-                                <h3 class="text-white">Trung Đông</h3>
-                            </div>
-                            <div style="--bs-bg-opacity: .25;"
-                                class="text-white button-color text-uppercase  fs-6 fw-semibold btn bsb-btn-2xl btn-outline rounded-5 border bg-secondary bg-gradient border-2 ">
-                                Trung Đông
-                            </div>
-                            <div style="--bs-bg-opacity: .25;"
-                                class="text-white button-color text-uppercase  fs-6 fw-semibold btn bsb-btn-2xl btn-outline rounded-5 border bg-secondary bg-gradient border-2 ">
-                                Châu Phi
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="row">
-                        <div class="col-6">
-                            <ul class="list-unstyled">
-                                <li>Ladakh</li>
-                                <li>Bhutan</li>
-                            </ul>
-                        </div>
-                        <div class="col-6">
-                            <ul class="list-unstyled">
-                                <li>Nepal</li>
-                                <li>Tây Tạng</li>
-                                <li>Sikkim</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section class="my-5">
-        <div style="background-color: #D3FFFF;" class=" container-xxl rounded-4 shadow p-4 ">
-
-            <div class="row row-cols-1 row-cols-md-3 g-3">
-                <div class="col-sm-12 col-md-6 col-lg-3 ">
-                    <div class="card h-100 border-0 bg-transparent ">
-                        <div class="card-body">
-                            <h4 class="card-title fw-bold ">Giá trị của chuyến đi</h4>
-                            <p class="card-text pt-2">Dù là hành trình đến đâu cùng chúng tôi, thương hiệu FIT Tour tự
-                                tin mang đến hành trình du lịch có GUU dành cho bạn.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-3 p-3">
-                    <div class="card h-100 p-4 border-0 rounded-3 shadow">
-                        <img src="img/hanh-trinh-tren-day-himalayas-fit-tour-2022-300x169.jpg" class="rounded-3"
-                            alt="...">
-                        <div class="card-body">
-                            <p class="card-title fw-bold">Kinh nghiệm dầy dặn</p>
-                            <p class="card-text pt-2">Tổ chức thành công 57 chuyến đi Himalayas – Trung Đông – Bắc Phi,
-                                120 đoàn khởi hành khác nhau trong năm qua</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-3 p-3">
-                    <div class="card h-100 p-4 border-0 rounded-3 shadow">
-                        <img src="img/buoi-trao-doi-va-tu-van-truoc-chuyen-di-trek-everest-base-camp-300x169.jpg"
-                            class="rounded-3" alt="...">
-                        <div class="card-body">
-                            <p class="card-title fw-bold">Đi cùng chuyên gia</p>
-                            <p class="card-text pt-2">Fit Tour đã cùng Kami Rita, người nắm kỷ lục 26 lần chinh phục
-                                Everest trên hành trình EBC.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-3 p-3">
-                    <div class="card h-100 p-4 border-0 rounded-3 shadow">
-                        <img src="img/doan-khach-fit-tour-check-in-diem-de-everest-base-camp-300x169.jpg"
-                            class="rounded-3" alt="...">
-                        <div class="card-body">
-                            <p class="card-title fw-bold">Chinh phục những vùng đất của giấc mơ</p>
-                            <p class="card-text pt-2">Dãy Himalayas, Khu vực Trung Đông – Con đường tơ lụa, Châu Phi,…
-                                và
-                                nhiều vùng đất khác.</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section class="bsb-hero-5 px-3 my-5 overlay-banner-3" style="background-image: url('img/banner-2.jpg');">
-        <div style="min-height: 320px;" class="container-fluid position-relative d-flex align-items-center">
-            <div class="container-xxl">
-                <div style="height: 100%;" class="col-sm-12  d-flex">
-                    <div class=" text-white col-sm-12 col-md-6 col-lg-6  box-content-banner  rounded-4 p-3">
-                        <p>Chỉ riêng đoàn của bạn</p>
-                        <h3 class="fw-bold mb-4">Thiết kế tour riêng (Private Tour)
-                        </h3>
-                        <p class="">
-                            <span class="col-12 col-sm-10 col-md-8 col-xxl-7">Bạn sẽ được lên chương trình bởi các Local
-                                Experiences Trip Planner. Hành trình được thiết kế riêng theo sở thích, nhu cầu, “Guu”
-                                đi chơi của bạn. Chi phí hợp lý và tiết kiệm.</span>
-                        </p>
-                        <div class="d-grid gap-3 d-sm-flex mt-2">
-
-                            <div
-                                class="text-white button-color fs-6 fw-semibold btn bsb-btn-2xl btn-outline border border-2">
-                                Lên Plan Ngay
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="my-5">
-        <div class="container-xxl">
-            <div class="row g-0">
-                <div class="col-sm-12 col-md-5 col-lg-7 bg-color-blue d-flex justify-content-center align-items-center">
-                    <div class="title ">
-                        <h3 class="text-white fw-bold text-center"> Du lịch có Guu – Hành trình của trải nghiệm giá trị
-                        </h3>
-                    </div>
-                </div>
-                <div class=" col-sm-12 col-md-4 col-lg-2 d-flex justify-content-center ">
-                    <img src=" img/chup-anh-cung-ngoi-den-stupa-o-nepal-tren-duong-di-everest-base-camp-300x300.jpg"
-                        alt="">
-                </div>
-                <div class="col-sm-12 col-md-3 col-lg-3 bg-color-blue d-flex justify-content-center align-items-center">
-                    <div class="grid gap-0 column-gap-3">
-                        <span class="fs-2 p-2 g-col-6 text-white "><i class="bi bi-facebook"></i></span>
-                        <span class="fs-2 p-2 g-col-6 text-white "><i class="bi bi-chat"></i></span>
-                        <span class="fs-2 p-2 g-col-6 text-white "><i class="bi bi-telephone"></i></span>
-                        <span class="fs-2 p-2 g-col-6 text-white "><i class="bi bi-map-fill"></i></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section style="min-height: 350px;" class="my-5">
-        <div class="container-xxl">
-            <div class="row">
-                <div class="col-6">
-                    <div class="box-progress mb-3">
-                        <h2>Đánh giá của khách hàng</h2>
-                    </div>
-                    <div class="box-progress mb-3">
-                        <h5>Điểm đến hấp dẫn</h5>
-                        <div style="--bs-progress-height: 2rem;" class="progress" role="progressbar"
-                            aria-label="Success example" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar bg-color-main" style="width: 98%;">98%</div>
-                        </div>
-                    </div>
-                    <div class="box-progress mb-3">
-                        <h5>Trãi nghiệm độc đáo</h5>
-                        <div style="--bs-progress-height: 2rem;" class="progress" role="progressbar"
-                            aria-label="Success example" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar bg-color-main" style="width: 95%;">95%</div>
-                        </div>
-                    </div>
-                    <div class="box-progress mb-3">
-                        <h5>Hướng dẫn viên</h5>
-                        <div style="--bs-progress-height: 2rem;" class="progress" role="progressbar"
-                            aria-label="Success example" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar bg-color-main" style="width: 82%;">82%</div>
-                        </div>
-                    </div>
-
-
-                </div>
-                <div class="col-6">
-                    <div class="container">
-                        <div id="carouselExampleControls" class="carousel">
-                            <div class="carousel-inner p-3">
-                                <div class="carousel-item2 active">
-                                    <div class="card">
-                                        <div style="background-image: url('img/du-lich-o-luxor-768x432.jpg');"
-                                            class="img-wrapper justify-content-center align-items-center d-flex img-banner-all">
-                                            <span class="text-white fw-bold fs-5">Cố Đô Cổ Đại Luxor</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item2">
-                                    <div class="card">
-                                        <div style="background-image: url('img/du-thuyen-song-niles-768x432.jpg');"
-                                            class="img-wrapper justify-content-center align-items-center d-flex img-banner-all">
-                                            <span class="text-white fw-bold fs-5">Du thuyên sông Niles</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item2">
-                                    <div class="card">
-                                        <div style="background-image: url('img/nha-tho-hoi-giao-Sultan-Hassan-cairo-ai-cap-768x432.jpg');"
-                                            class="img-wrapper justify-content-center align-items-center d-flex img-banner-all">
-                                            <span class="text-white fw-bold fs-5 text-center">Thủ đô Cairo - hơn 5000
-                                                năm lịch
-                                                sử</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item2">
-                                    <div class="card">
-                                        <div style="background-image: url('img/mot-sa-mac-long-lay-o-ai-cap-768x432.jpg');"
-                                            class="img-wrapper justify-content-center align-items-center d-flex img-banner-all">
-                                            <span class="text-white fw-bold fs-5">Sa mạc Sahara</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item2">
-                                    <div class="card">
-                                        <div style="background-image: url('img/oc-dao-siwa-ai-cap-768x432.jpg');"
-                                            class="img-wrapper justify-content-center align-items-center d-flex img-banner-all">
-                                            <span class="text-white fw-bold fs-5">Ốc đảo Siwa</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item2">
-                                    <div class="card">
-                                        <div style="background-image: url('img/kim-tu-thap-giza-768x432.jpg');"
-                                            class="img-wrapper justify-content-center align-items-center d-flex img-banner-all">
-                                            <span class="text-white fw-bold fs-5">Kim tự tháp Giza</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item2">
-                                    <div class="card">
-                                        <div style="background-image: url('img/den-luxor-768x432.jpg');"
-                                            class="img-wrapper justify-content-center align-items-center d-flex img-banner-all">
-                                            <span class="text-white fw-bold fs-5">Thung lũng các vị vua Pharaoh</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item2">
-                                    <div class="card">
-                                        <div class="img-wrapper justify-content-center align-items-center d-flex"><img
-                                                src="..." class="d-block w-100" alt="..."> </div>
-                                        <div class="card-body">
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <button class="carousel-control-prev" type="button"
-                                data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button"
-                                data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section>
-        <div class="container-xxl">
-            <h2 class="fw-bold">Khách hàng thân thiết của Fit Tour</h2>
-            <div class="container">
-                <div class="row">
-                    <div class="logo col-3">
-                        <img src="img/logo-1.jpg" alt="">
-                    </div>
-                    <div class="logo col-3">
-                        <img src="img/logo-2.jpg" alt="">
-                    </div>
-                    <div class="logo col-3">
-                        <img src="img/logo3.jpg" alt="">
-                    </div>
-                    <div class="logo col-3">
-                        <img src="img/logo4.jpg" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <div class="container-xxl">
-            <div class="row text-center">
-                <h4 class="color-main fw-bold">Tạp chí du lịch</h4>
-                <h1 class="fw-bold">Emagazine</h1>
-            </div>
-            <div class="row row-cols-1 row-cols-sm-12 row-cols-md-3 row-cols-lg-3 g-2">
-                <div class="col">
-                    <div class="card border-0">
-                        <img src="img/nhat-ky-trai-nghiem-du-lich-ladakh-bang-xe-may-768x432.jpg" class="card-img-top"
-                            alt="...">
-                        <div class="card-body px-0">
-                            <p class="card-title fw-semibold fs-4 text-dark">Nhật ký hành trình Ladakh bằng xe máy
-                                - Cảm xúc
-                                ở...</p>
-                            <p class="card-text">Nhật ký hành trình Ladakh bằng xe máy kể lại hành trình 8 ngày qua vùng
-                                đất thuộc dãy Himalayas này! Những hình ảnh đặc biệt đầy ấn tượng.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card border-0">
-                        <img src="img/emagazine-cuu-trai-cau-768x432.jpg" class="card-img-top" alt="...">
-                        <div class="card-body px-0">
-                            <p class="card-title fw-semibold fs-4 text-dark">Emagazine Cửu Trại Câu: Hành trình của
-                                Đặng
-                                Thùy Dương</p>
-                            <p class="card-text">A journey tailored by Fit Tour & Dang Thuy Duong Home Đối với Dương,
-                                Cửu Trại Câu là nơi có vẻ đẹp không gì sánh bằng, là điểm đến đáng…</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card border-0">
-                        <img src="img/emagazine-nhung-ngay-du-muc-zanskar-768x432.jpeg" class="card-img-top" alt="...">
-                        <div class="card-body px-0">
-                            <p class="card-title fw-semibold fs-4 text-dark">Emagazine: Đặng Thùy Dương và những
-                                ngày du mục
-                                Zanskar</p>
-                            <p class="card-text">Emagazine Đặng Thùy Dương và những ngày du mục Zanskar kể về câu chuyện
-                                khám phá vẻ đẹp tuyệt vời, cũng những hình ảnh siêu đẹp.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row my-5">
-                <div class="d-grid gap-2 col-lg-4 col-md-6 col-sm-6  mx-auto">
-                    <button
-                        class=" button-home btn-lg p-3 text-uppercase text-white bg-color-second fw-bold btn tn-outline rounded-4 border border-2"
-                        type="button">Xem Thêm</button>
-                </div>
-            </div>
-        </div>
-
-    </section>
-    <section>
-        <div class="container-xxl">
-            <div class="row text-center">
-                <h4 class="color-main fw-bold">Kinh nghiệm du lịch</h4>
-                <h1 class="fw-bold">Blog</h1>
-            </div>
-            <div class="row row-cols-1 row-cols-sm-12 row-cols-md-3 row-cols-lg-3 g-2">
-                <div class="col">
-                    <div class="card border-0">
-                        <img src="img/nhung-tu-thong-dung-khi-du-lich-mong-co-768x432.jpg" alt="...">
-                        <div class="card-body px-0">
-                            <a href="" class=" fw-bold card-title fw-semibold fs-4 color-main text-decoration-none">Bảng
-                                phiên âm
-                                từ thông dụng cho
-                                khách du lịch Mông Cổ</a>
-                            <p class="card-text mt-2">Những từ thông dụng cho du khách du lịch Mông Cổ. Từ lời chào,
-                                giới
-                                thiệu, đến việc tiếp cận…</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card border-0">
-                        <img src="img/nhung-mon-an-mong-co-hap-dan-nhat-768x432.jpg" class="card-img-top" alt="...">
-                        <div class="card-body px-0">
-                            <a href="" class=" fw-bold card-title fw-semibold fs-4 color-main text-decoration-none">Ẩm
-                                thực Mông
-                                Cổ - Top 13 món ăn Mông Cổ hấp dẫn nhất</a>
-                            <p class="card-text mt-2">Top 13 món ăn Mông Cổ làm nổi bật ẩm thực du mục: 1. Mì Tsuivan,
-                                2. Bánh bao Buuz,…</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card border-0">
-                        <img src="img/thoi-diem-tot-de-du-lich-mong-co-768x432.jpg" class="card-img-top" alt="...">
-                        <div class="card-body px-0">
-                            <a href="" class=" fw-bold card-title fw-semibold fs-4 color-main text-decoration-none">Thời
-                                điểm tốt
-                                nhất để du lịch Mông Cổ</a>
-                            <p class="card-text mt-2">Thời gian tốt nhất để du lịch Mông Cổ là từ tháng 6 đến tháng 8,
-                                khi
-                                cảnh quan tươi…</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row my-5">
-                <div class="d-grid gap-2 col-lg-4 col-md-6 col-sm-6  mx-auto">
-                    <button
-                        class=" button-home btn-lg p-3 text-uppercase text-white bg-color-second fw-bold btn tn-outline rounded-4 border border-2"
-                        type="button">Xem Thêm</button>
-                </div>
-            </div>
-        </div>
-
-    </section>
-
-    <section>
-        <div class="">
-            <div class="row row-cols-2 row-cols-sm-12 row-cols-md-6 row-cols-lg-3 g-0">
-                <div class="col">
-                    <img src="img/img-grid-1.jpg" alt="">
-                </div>
-                <div class="col">
-                    <img src="img/banner-2.jpg" alt="">
-                </div>
-                <div class="col">
-                    <img src="img/img-gird-2.jpg" alt="">
-                </div>
-                <div class="col">
-                    <img src="img/img-grid-3.jpg" alt="">
-                </div>
-                <div class="col">
-                    <img src="img/img-grid-4.jpg" alt="">
-                </div>
-                <div class="col">
-                    <img src="img/img-grid-5.jpg" alt="">
-                </div>
-            </div>
-        </div>
-
-    </section>
-
-    <!-- <section>
-        <div style="min-height: 150px;" class="container-fluid bg-color-main">
-            <div style="min-height: 150px;" class="container d-grid ">
-                <div class="row ">
-                    <div class="col-sm-12 col-md-8 col-lg-8 d-flex align-items-center">
-                        <h2 class="fw-bold text-white">#FitTour #DulichcoGuu</h2>
-                    </div>
-                    <div class="col-sm-12 col-md-4 col-lg-4 d-flex justify-content-center align-items-center">
-                        <div class="grid gap-0 column-gap-3">
-                            <span class="fs-2 p-2 g-col-6 text-white "><i class="bi bi-facebook"></i></span>
-                            <span class="fs-2 p-2 g-col-6 text-white "><i class="bi bi-youtube"></i></span>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
+<body ng-app="myapp">
+    <div ng-include="'header.html'"></div>
+
+    <!-- Content -->
+
+
+    <div ng-view></div>
+
+
+    <!-- Content -->
+
+
+    <div ng-include="'footer.html'"></div>
+
+
+
+    <script>
+        var app = angular.module("myapp", ["ngRoute"]);
+        app.config(function ($routeProvider) {
+            $routeProvider
+                .when("/header", { templateUrl: "header.html", controller: "dulichcoguuCrtl" })
+                .when("/footer", { templateUrl: "footer.html", controller: "dulichcoguuCrtl" })
+                .when("/", { templateUrl: "home.html", controller: "dulichcoguuCrtl" })
+                .when("/blog", { templateUrl: "blog.html", controller: "dulichcoguuCrtl" })
+                .when("/contact", { templateUrl: "contact.html", controller: "dulichcoguuCrtl" })
+                .when("/gallery", { templateUrl: "gallery.html", controller: "dulichcoguuCrtl" })
+                .when("/gallery-detail/:id", { templateUrl: "gallery_detail.html", controller: "dulichcoguuCrtl" })
+                .when("/introduction", { templateUrl: "introduction.html", controller: "dulichcoguuCrtl" })
+                .when("/lichtrinhtour", { templateUrl: "lichtrinhtour.html", controller: "dulichcoguuCrtl" })
+                .when("/tours", { templateUrl: "tours.html", controller: "dulichcoguuCrtl" })
+                .when("/detail/:id", { templateUrl: "detail.html", controller: "dulichcoguuCrtl" })
+                .otherwise({ templateUrl: "home.html", controller: "dulichcoguuCrtl" })
+        })
+
+        app.controller("dulichcoguuCrtl", function ($scope, $rootScope, $routeParams, $http, $q) {
+            //Khai báo 1 mảng products rỗng 
+            $scope.tours = [];
+            $scope.listCategory = [];
+            $scope.blogs = []
+            $scope.listGallery = [];
+            $scope.loadLiMit = 6;
+
+
+            //Đọc dữ liệu từ json server rồi đổ mảng vào trong products    
+            $http.get("http://localhost:3000/tours")
+                .then(function (reponse) {
+                    $scope.tours = reponse.data;
+                    console.log($scope.tours);
+                    console.log($scope.tours.length);
+
+
+                    $scope.loadMore = function () {
+                        $scope.loadLiMit += 3;
+                        // console.log($scope.tours);
+                        // console.log($scope.tours.length);
+                    }
+                    $scope.collapse = function () {
+                        $scope.loadLiMit = 6;
+                    }
+                    // // Pagination
+                    // $scope.currentPage = 1;
+                    // $scope.toursPerPage = 3; // số tour/mỗi trang
+
+                    // $scope.pageChanged = function () {
+                    //     // logic hiển thị tour trên trang hiện tại
+                    //     let begin = (($scope.currentPage - 1) * $scope.toursPerPage);
+                    //     let end = begin + $scope.toursPerPage
+
+                    //     $scope.filteredItems = $scope.tours.slice(begin, end);
+                    //     // console.log($scope.filteredItems);
+                    // };
+
+                    // $scope.pageChanged();
+
+                    // $scope.search = function () {
+                    //     // Gọi hàm tính toán trang mới khi tìm kiếm
+                    //     $scope.currentPage = 1;
+                    //     $scope.pageChanged();
+                    // };
+
+                    // // Button Begin 
+                    // $scope.beginPage = function () {
+                    //     $scope.currentPage = 1;
+                    //     $scope.pageChanged();
+                    // }
+                    // // Button Prev
+                    // $scope.prevPage = function () {
+                    //     $scope.currentPage--;
+                    //     $scope.pageChanged();
+                    // };
+                    // // Button Next
+                    // $scope.nextPage = function () {
+                    //     $scope.currentPage++;
+                    //     $scope.pageChanged();
+                    //     console.log($scope.currentPage);
+                    // };
+                    // // Button End
+                    // $scope.endPage = function () {
+                    //     $scope.currentPage = Math.ceil($scope.tours.length / $scope.toursPerPage);
+                    //     $scope.pageChanged();
+                    //     console.log($scope.currentPage);
+                    // }
+                    // // Page total
+                    // $scope.totalPages = function () {
+                    //     $scope.totalpage = Math.ceil($scope.tours.length / $scope.toursPerPage);
+                    //     return Math.ceil($scope.tours.length / $scope.toursPerPage);
+                    // };
+                    // console.log($scope.totalPages());
+
+                    //    // Pagination
+
+                    // Lấy sản phẩm chi tiết thông qua id truyền vào routeParams
+                    $scope.detailTour = $scope.tours.find(item => item.id == $routeParams.id);
+                });
+            $http.get("http://localhost:3000/listCategory")
+                .then(function (reponse) {
+                    $scope.listCategory = reponse.data;
+                    console.log($scope.listCategory);
+                    // Lọc danh mục Tour
+
+
+                    // $scope.detailTour = $scope.category.find(item => item.id == $routeParams.id);
+                });
+            $http.get("http://localhost:3000/blogs")
+                .then(function (reponse) {
+                    $scope.blogs = reponse.data;
+                    console.log($scope.blogs);
+                    // $scope.detailTour = $scope.category.find(item => item.id == $routeParams.id);
+                });
+            $http.get("http://localhost:3000/listGallery")
+                .then(function (reponse) {
+                    $scope.listGallery = reponse.data;
+                    console.log($scope.listGallery);
+                    $scope.galleryDetail = $scope.listGallery.find(item => item.id == $routeParams.id);
+                });
+
+            // Lấy Tour + Category
+            var toursRequest = $http.get('http://localhost:3000/tours');
+            var categoriesRequest = $http.get('http://localhost:3000/listCategory');
+            $q.all([toursRequest, categoriesRequest])
+                .then(function (responses) {
+                    $scope.tours = responses[0].data;
+                    $scope.listCategory = responses[1].data;
+
+                    // Xử lý dữ liệu toursResponse và categoriesResponse tại đây
+                    console.log('Dữ liệu tours:', $scope.tours);
+                    console.log('Dữ liệu danh mục:', $scope.listCategory);
+
+                    // Lọc sản phẩm theo Danh Mục
+                    $scope.selectedCategory = '';
+                    $scope.filteredTours = $scope.tours;
+                    $scope.filterTours = function () {
+                        if ($scope.selectedCategory) {
+                            $scope.filteredTours = $scope.tours.filter(tour => tour.cateid == $scope.selectedCategory);
+                            console.log($scope.selectedCategory);
+                            console.log($scope.filteredTours);
+                        } else {
+                            $scope.filteredTours = $scope.tours;
+                        }
+                    };
+                })
+                .catch(function (error) {
+                    // Xử lý lỗi nếu có
+                    console.error('Đã xảy ra lỗi:', error);
+                });
+
+
+
+        });
+    </script>
+    <script src="js/style.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
 </body>
-
-<!-- Remove the container if you want to extend the Footer to full width. -->
-<!-- Footer -->
-<footer style="background-color: black;" class="text-center text-lg-start text-white">
-    <!-- Section: Social media -->
-    <section class="d-flex justify-content-between p-4 bg-color-main">
-        <!-- Left -->
-        <div class="container d-grid ">
-            <div class="row ">
-                <div class="col-sm-12 col-md-8 col-lg-8 d-flex align-items-center">
-                    <h2 class="fw-bold text-white">#FitTour #DulichcoGuu</h2>
-                </div>
-                <div class="col-sm-12 col-md-4 col-lg-4 d-flex justify-content-center align-items-center">
-                    <div class="grid gap-0 column-gap-3">
-                        <span class="fs-2 p-2 g-col-6 text-white "><i class="bi bi-facebook"></i></span>
-                        <span class="fs-2 p-2 g-col-6 text-white "><i class="bi bi-youtube"></i></span>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Left -->
-
-        <!-- Right -->
-        <div>
-            <a href="" class="text-white me-4">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="" class="text-white me-4">
-                <i class="fab fa-twitter"></i>
-            </a>
-            <a href="" class="text-white me-4">
-                <i class="fab fa-google"></i>
-            </a>
-            <a href="" class="text-white me-4">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="" class="text-white me-4">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="" class="text-white me-4">
-                <i class="fab fa-github"></i>
-            </a>
-        </div>
-        <!-- Right -->
-    </section>
-    <!-- Section: Social media -->
-
-    <!-- Section: Links  -->
-    <section class="">
-        <div class="container text-center text-md-start mt-5">
-            <!-- Grid row -->
-            <div class="row mt-3">
-                <!-- Grid column -->
-                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                    <!-- Content -->
-                    <h6 class="color-second fs-5 fw-bold">Tài Nguyên</h6>
-                    <hr class="mb-4 mt-0 d-inline-block mx-auto"
-                        style="width: 60px; background-color: #FF8C00; height: 2px" />
-                    <p>
-                        <a href="#!" class="text-white text-decoration-none ">Tour du lịch nước ngoài</a>
-                    </p>
-                    <p>
-                        <a href="#!" class="text-white text-decoration-none ">Motor Trip nước ngoài</a>
-                    </p>
-                    <p>
-                        <a href="#!" class="text-white text-decoration-none ">Blog</a>
-                    </p>
-                    <p>
-                        <a href="#!" class="text-white text-decoration-none ">Emagazine</a>
-                    </p>
-                    <p>
-                        <a href="#!" class="text-white text-decoration-none ">Hình ảnh du lịch</a>
-                    </p>
-                </div>
-                <!-- Grid column -->
-
-                <!-- Grid column -->
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                    <!-- Links -->
-                    <h6 class="color-second fs-5 fw-bold">Thông Tin</h6>
-                    <hr class="mb-4 mt-0 d-inline-block mx-auto"
-                        style="width: 60px; background-color: #FF8C00; height: 2px" />
-                    <p>
-                        <a href="#!" class="text-white text-decoration-none ">Về chúng tôi</a>
-                    </p>
-                    <p>
-                        <a href="#!" class="text-white text-decoration-none ">Liên Hệ</a>
-                    </p>
-                    <p>
-                        <a href="#!" class="text-white text-decoration-none ">Chính sách bảo mật</a>
-                    </p>
-                    <p>
-                        <a href="#!" class="text-white text-decoration-none ">Điều khoản dịch vụ</a>
-                    </p>
-                    <p>
-                        <a href="#!" class="text-white text-decoration-none ">Tài khoản thanh toán</a>
-                    </p>
-                </div>
-                <!-- Grid column -->
-
-                <!-- Grid column -->
-                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                    <!-- Links -->
-                    <h6 class="color-second fs-5 fw-bold">Xác Nhận</h6>
-                    <hr class="mb-4 mt-0 d-inline-block mx-auto"
-                        style="width: 60px; background-color: #FF8C00; height: 2px" />
-                    <p>QR Website</p>
-                    <img class="mb-4" src="img/dmca_protected_1_120.png" alt="">
-                    <img style="width: 100px;" src="img/qr-code-dulichcoguu.jpg" alt="">
-                </div>
-                <!-- Grid column -->
-
-                <!-- Grid column -->
-                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                    <!-- Links -->
-                    <h6 class="color-second fs-5 fw-bold">Liên Hệ</h6>
-                    <hr class="mb-4 mt-0 d-inline-block mx-auto"
-                        style="width: 60px; background-color: #FF8C00; height: 2px" />
-                    <p><i class="bi bi-geo-alt-fill"></i> 31 Nguyễn Văn Thủ, P.Đa Kao, Q.1, TP.HCM</p>
-                    <p><i class="bi bi-telephone-fill"></i> +84 934 8888 54</p>
-                    <p><i class="bi bi-envelope"></i> info@fittour.com.vn</p>
-                </div>
-                <!-- Grid column -->
-            </div>
-            <!-- Grid row -->
-        </div>
-    </section>
-    <!-- Section: Links  -->
-
-    <!-- Copyright -->
-    <div class="container">
-        <hr class="mb-4 mt-0  mx-auto" style=" background-color: #ffffff; height: 2px" />
-
-        <div class="row g-4 p-3">
-            <div class="col-sm-12 col-md-3">
-                <img src="img/logoMain.png" alt="">
-            </div>
-            <div class="col-sm-12 col-md-3">
-                <p>Internation Travel Company Fit Tour</p>
-            </div>
-            <div class="col-sm-12 col-md-6 text-center ">
-                <p>Copyright © All rights reserved.
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Copyright -->
-</footer>
-<!-- Footer -->
-<!-- End of .container -->
-<script src="js/style.js"></script>
 
 </html>

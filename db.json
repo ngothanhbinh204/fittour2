@@ -1,0 +1,338 @@
+{
+    "tours": [
+        {
+            "id": 1,
+            "name": "Tour du lịch đến Miệng núi lửa Bromo 6 ngày 5 đêm - Luxury",
+            "price": 19550000,
+            "image": "p1.jpg",
+            "description": "Tour du lịch đến Miệng núi lửa Bromo 6 ngày 5 đêm – Luxury là một hành trình khám phá tuyệt vời đưa du khách đến với những điểm đến độc đáo và hấp dẫn nhất tại Indonesia. Với dịch vụ cao cấp và trải nghiệm độc đáo, tour này hứa hẹn mang lại những kỷ niệm đáng nhớ và thú vị.",
+            "slug": "Kỳ Quan",
+            "cateid": 1
+        },
+        {
+            "id": 2,
+            "name": "Tour du lịch Ai Cập và Jordan 12 ngày 11 đêm trọn gói",
+            "price": 112490000,
+            "image": "p2.jpg",
+            "description": "Khởi đầu từ Cairo, du khách sẽ được đắm mình trong vẻ đẹp mênh mông của sa mạc Sahara và khám phá những công trình kiến trúc kỳ diệu như Kim Tự Tháp Giza và Đại Nhân Sư. Tại Jordan, hành trình tiếp tục với việc thăm thú các di sản văn hóa độc đáo như Petra – Viên ngọc của Jordan và thành phố cổ Jerash.",
+            "slug": "Ai Cập",
+            "cateid": 3
+        },
+        {
+            "id": 3,
+            "name": "Tour Motor Châu Phi 18 ngày – Nam Phi và Namibia",
+            "price": 112490000,
+            "image": "p3.jpg",
+            "description": "Tour du lịch Châu Phi 18 ngày bằng xe máy qua Nam Phi và Namibia. Hành trình có 14 ngày lái xe mô tô, ở khách sạn 4 sao, lodge và camp luxury. Chuyến đi là một cuộc phiêu lưu thực sự vào Châu Phi. Nơi bạn chạy Motor vào những miền đất hoang dã như ngoài hành tinh.",
+            "slug": "Châu Phi",
+            "cateid": 4
+        },
+        {
+            "id": 4,
+            "name": "Tour Motor Adventure Morocco 13 ngày – Núi, sa mạc và ốc đảo",
+            "price": 112490000,
+            "image": "p4.jpg",
+            "description": "Hành trình du lịch Morocco bằng xe máy 14 ngày đầy thú vị qua những phong cảnh mê hoặc của Maroc. Từ những con phố nhộn nhịp của Casablanca đến những bãi biển yên tĩnh của Al Hoceima, cuộc phiêu lưu này mang đến sự kết hợp hoàn hảo giữa sự hòa nhập văn hóa và những chuyến đi phấn khích. Khám phá những khu phố cổ, những ngọn núi hùng vĩ và những thị trấn ven biển đẹp như tranh vẽ khi bạn đi qua địa hình đa dạng của viên ngọc Bắc Phi này.",
+            "slug": "Morocco",
+            "cateid": 5
+        },
+        {
+            "id": 5,
+            "name": "Tour Trung Quốc 7 ngày 7 đêm – Khám phá Trung Nguyên",
+            "price": 893000000,
+            "image": "p5.jpg",
+            "description": "Tour Trung Quốc 7 ngày 7 đêm, No Shopping, khách sạn 5 sao toàn chặng. Hành trình khám phá vùng đất Trung Nguyên, núi Võ Đang, núi Ngoạ Long,… Chuyến đi là tập hợp những tuyến điểm đẹp nhất tại vùng đất này. Chương trình cũng đảm bảo về ẩm thực, văn hoá và các trải nghiệm đặc biệt cho du khách.",
+            "slug": "Trung Quốc",
+            "cateid": 6
+        },
+        {
+            "id": 6,
+            "name": "Tour du lịch Quý Châu 6 ngày 5 đêm – Khách sạn 4 sao",
+            "price": 21880000,
+            "image": "p6.jpg",
+            "description": "Bắt đầu chuyến du lịch Quý Dương 6 ngày 5 đêm hấp dẫn, nơi mỗi ngày mở ra với những bữa sáng thú vị và những chuyến khám phá văn hóa quyến rũ. Đi qua thành phố Trấn Biên cổ kính, trải nghiệm vẻ đẹp quyến rũ vượt thời gian của Làng Thiên Hồ Miêu và leo lên đỉnh Phạm Tinh Sơn bằng cáp treo, chiêm ngưỡng toàn cảnh núi non và thung lũng. ",
+            "slug": "Kỳ Quan",
+            "cateid": 6
+        },
+        {
+            "id": 7,
+            "name": "Tour Con Đường Tơ Lụa 22 ngày – Hành trình 5stan đặc biệt",
+            "price": 209990000,
+            "image": "p7.jpg",
+            "description": "Tour Con Đường Tơ Lụa 22 ngày trọn gói bao gồm vé máy bay, khách sạn 4-5 sao, lều du mục luxury, visa,… đi qua 5 quốc gia: Kazakhstan, Kyrgyzstan, Tajikistan, Uzbekistan và Turkmenistan.",
+            "slug": "Châu Mỹ",
+            "cateid": 8
+        },
+        {
+            "id": 8,
+            "name": "Tour du lịch Châu Âu bằng xe gắn máy: Pháp, Ý, Áo, Thuỵ Sĩ",
+            "price": 514490000,
+            "image": "p8.jpg",
+            "description": "Tour du lịch Châu Âu 14 ngày 14 đêm bằng xe gắn máy (Motor Trip) 4 nước: Pháp, Ý, Áo, Thuỵ Sĩ. Tour trọn gói với visa, xe hậu cần, thợ máy, v.v. Chuyến đi với đặc điểm chính là khám phá phong cảnh ngoạn mục của dãy Alps. Hành trình bao gồm băng qua những ngọn núi mang tính biểu tượng, khám phá những ngôi làng quyến rũ và hòa mình vào nền văn hóa phong phú của các quốc gia như Ý, Thụy Sĩ và Áo.",
+            "slug": "Châu Âu",
+            "cateid": 8
+        },
+        {
+            "id": 9,
+            "name": "Tour Vân Nam mùa xuân 8 ngày 7 đêm",
+            "price": 28990000,
+            "image": "p9.jpg",
+            "description": "Tour Vân Nam 8 ngày 7 đêm vào mùa xuân là một hành trình tuyệt vời đưa du khách đến khám phá những vùng đất tuyệt diệu và tràn ngập sắc màu mùa xuân tại vùng miền phía Nam của Trung Quốc.",
+            "slug": "Trung Quốc",
+            "cateid": 6
+        },
+        {
+            "id": 10,
+            "name": "Tour Mông Cổ 8 ngày 7 đêm trọn gói – Lều 4 sao",
+            "price": 67990000,
+            "image": "p10.jpg",
+            "description": "Tour du lịch Mông Cổ 8 ngày 7 đêm trọn gói với hành trình lưu trú tiêu chuẩn 4 sao, trải nghiệm cưỡi ngựa, ngủ lều, khám phá vườn quốc gia.",
+            "slug": "Mông Cổ",
+            "cateid": 9
+        },
+        {
+            "id": 11,
+            "name": "Tour Đạo Thành, Á Đinh – Nơi Thuần Khiết Cuối Của Người Tạng",
+            "price": 36990000,
+            "image": "p11.jpg",
+            "description": "Tour trọn gói Đạo Thành – Á Đinh 8 ngày khám phá “vùng đất thuần khiết cuối cùng của người Tạng”. Từ những cao nguyên cao nhất thế giới đến những phong cảnh ngoạn mục, hãy đắm mình trong một thế giới kỳ diệu. Hãy chuẩn bị cho những chuyến phiêu lưu đầy cảm hứng và độ cao lớn, nơi mỗi khoảnh khắc đều hứa hẹn sự kết hợp giữa sự phong phú về văn hóa và sức hấp dẫn tự nhiên.",
+            "slug": "Trung Quốc",
+            "cateid": 6
+        },
+        {
+            "id": 12,
+            "name": "Tour Thổ Nhĩ Kỳ 9 ngày trọn gói – Tour cam kết hấp dẫn",
+            "price": 68.890000,
+            "image": "p12.jpg",
+            "description": "Tour Thổ Nhĩ Kỳ 9 ngày trọn gói, trải nghiệm nét đẹp đặc biệt ở vùng đất văn hóa cổ xưa. Hành trình là chuyến đi hấp dẫn về văn hóa, cảnh quan và những trải nghiệm. Bạn sẽ có có thời gian khám phá các thành phố lớn cổ đại, những vùng làng quê, các di tích Thánh, thành cổ Troy,… Và đặc biệt là đi khinh khí cầu tham quan một trong những địa điểm du lịch khinh khí cầu tốt nhất thế giới, Cappadocia.",
+            "slug": "Thổ Nhĩ Kỳ",
+            "cateid": 12
+        },
+        {
+            "id": 13,
+            "name": "Tour Nhật Bản 5 ngày 5 đêm dịp Tết 2024 – Trọn gói",
+            "price": 68890000,
+            "image": "p13.jpg",
+            "description": "Tour du lịch Nhật Bản 5 ngày 5 đêm Trọn gói dịp Tết của Fit Tour mang bạn đến hành trình cung đường mùa đông hấp dẫn. Lịch trình ngắn gọn, tham quan đầy đủ và thoải mái các địa danh nổi bật của Nhật Bản một cách tốt nhất.",
+            "slug": "Nhật Bản",
+            "cateid": 1
+        },
+        {
+            "id": 14,
+            "name": "Tour Nhật Bản 6 ngày 6 đêm dịp Tết 2024 – Trọn gói",
+            "price": 58100000,
+            "image": "p14.jpg",
+            "description": "Tour du lịch Nhật Bản 6 ngày 6 đêm Trọn gói dịp Tết của Fit Tour mang bạn đến hành trình cung đường mùa đông đầy hấp dẫn qua những viên ngọc văn hóa, địa điểm nổi tiếng.",
+            "slug": "Nhật Bản",
+            "cateid": 1
+        },
+        {
+            "id": 15,
+            "name": "Tour Trung Quốc 5 ngày – Khám phá thiên đường Giang Nam",
+            "price": 68.890000,
+            "image": "p15.jpg",
+            "description": "Tour Trung Quốc 5 ngày khám phá vùng đất Giang Nam đầy hấp dẫn: khám phá thị trấn nước Ô Trấn đầy mê hoặc, mang tính biểu tượng của Thượng Hải. Đắm mình trong vẻ đẹp vượt thời gian của kiến ​​trúc cổ điển Ô Trấn, nơi những con phố cổ và những con kênh đẹp như tranh vẽ trở nên sống động. Trải nghiệm sự sang trọng của Bến Thượng Hải nổi tiếng, chiêm ngưỡng các địa danh như Cầu Nam Phố và Trung Hoa Đệ Nhất Lộ – Đại lộ Nam Kinh.",
+            "slug": "Trung Quốc",
+            "cateid": 6
+        },
+        {
+            "id": 16,
+            "name": "Tour Trung Quốc 6 ngày 6 đêm – Khám phá cố đô Trung Hoa",
+            "price": 22990000,
+            "image": "p16.jpg",
+            "description": "Tour Trung Quốc 6 ngày 6 đêm đưa bạn qua các kỳ quan văn hóa và các địa danh nổi bật của Trung Quốc! Từ việc khám phá các địa danh lịch sử của Trịnh Châu và thành phố cổ Lạc Dương cho đến chứng kiến ​​những kỳ quan của Đội quân đất nung ở Tây An, chuyến tham quan này hứa hẹn một sự pha trộn phong phú giữa lịch sử, nghệ thuật và cảnh quan ngoạn mục.",
+            "slug": "Trung Quốc",
+            "cateid": 6
+        },
+        {
+            "id": 17,
+            "name": "Tour du lịch Lào 6 ngày 5 đêm: Bay toàn chặng, 5* Vien Tiane",
+            "price": 22990000,
+            "image": "p17.jpg",
+            "description": "Tour du lịch Lào 6 ngày 5 đêm trọn gói với dịch vụ du thuyền sông Mekong, khách sạn 4-5 sao, khám phá các địa danh và nền ẩm thực đặc trưng. Chương trình mang đến trải nghiệm đặc biệt ở xứ sở Triệu Voi và vương quốc Lan Xang.",
+            "slug": "Kỳ Quan",
+            "cateid": 1
+        },
+        {
+            "id": 18,
+            "name": "Motor Tour châu Âu 16 ngày dãy Alps: Đức, Áo, Ý, Thụy Sĩ, Pháp",
+            "price": 22990000,
+            "image": "p18.jpg",
+            "description": "Motor Tour 16 ngày trên dãy Apls qua các quốc gia Đức, Áo, Ý, Thụy Sĩ, Pháp là giấc mơ đối với bất kỳ người đi xe máy có kinh nghiệm nào, với chuỗi khám phá thác, băng đèo, lên núi và xuống dốc vô tận để đến được những địa điểm hấp dẫn nhất giữa dãy Alps và Dolomites của Ý, cùng với một số bước nhảy đến Thụy Sĩ.",
+            "slug": "Châu Âu",
+            "cateid": 8
+        },
+        {
+            "id": 19,
+            "name": "Tour du lịch New Zealand 11 ngày trọn gói – Road Trip",
+            "price": 22990000,
+            "image": "p19.jpg",
+            "description": "Tour New Zealand 11 ngày 8 đêm năm 2024 là hành trình Road Trip khám phá cung đường mùa thu đẹp nhất. Trải nghiệm những dịch vụ cao cấp: dùng hãng hàng không 5 sao, trải nghiệm trực thăng nhìn ngắm ngọn núi cao Mount Cook, khám phá nét đẹp nguyên sơ và 4 hồ đẹp nhất New Zealand.",
+            "slug": "New Zealand",
+            "cateid": 8
+        },
+        {
+            "id": 20,
+            "name": "Tour du lịch Myanmar 5 ngày 4 đêm – Khám phá xứ Phật",
+            "price": 22990000,
+            "image": "p20.jpg",
+            "description": "Tour du lịch Myanmar 5 ngày 4 đêm là hành trình khám phá vùng đất Phật đặc trưng hấp dẫn của Đông Nam Á. Hành trình đưa bạn trải nghiệm những địa danh Phật giáo hấp dẫn (Chùa và tu viện), những địa danh tham quan nổi tiếng và thưởng thức những nét ẩm thực đặc trưng của Myanamar. Đặc biệt với thương hiệu du lịch có Guu, chúng tôi cam kết mang đến trải nghiệm cực kỳ đặc biệt dành riêng cho đoàn khách của mình.",
+            "slug": "Myanmar",
+            "cateid": 8
+        }
+    ],
+    "listCategory": [
+        {
+            "id": 1,
+            "name": "Nước Ngoài"
+        },
+        {
+            "id": 2,
+            "name": "Trong Nước"
+        },
+        {
+            "id": 3,
+            "name": "Ai Cập"
+        },
+        {
+            "id": 4,
+            "name": "Châu Phi"
+        },
+        {
+            "id": 5,
+            "name": "Morocoo"
+        },
+        {
+            "id": 6,
+            "name": "Trung Quốc"
+        },
+        {
+            "id": 7,
+            "name": "Quý Châu"
+        },
+        {
+            "id": 8,
+            "name": "Châu Âu"
+        },
+        {
+            "id": 9,
+            "name": "Mông Cổ"
+        },
+        {
+            "id": 10,
+            "name": "Đạo Thành"
+        },
+        {
+            "id": 11,
+            "name": "Thổ Nhĩ Kỳ"
+        },
+        {
+            "id": 12,
+            "name": "Indonesia"
+        }
+    ],
+    "blogs": [
+        {
+            "id": 1,
+            "name": "Nhật ký hành trình Ladakh bằng xe máy - Cảm xúc ở...",
+            "description": "Nhật ký hành trình Ladakh bằng xe máy kể lại hành trình 8 ngày qua vùng đất thuộc dãy Himalayas này! Những hình ảnh đặc biệt đầy ấn tượng.",
+            "image": "nhat-ky-trai-nghiem-du-lich-ladakh-bang-xe-may-768x432.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Emagazine Cửu Trại Câu: Hành trình của Đặng Thùy Dương",
+            "description": "A journey tailored by Fit Tour & Dang Thuy Duong Home Đối với Dương, Cửu Trại Câu là nơi có vẻ đẹp không gì sánh bằng, là điểm đến đáng…",
+            "image": "emagazine-cuu-trai-cau-768x432.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Emagazine: Đặng Thùy Dương và những ngày du mục Zanskar.",
+            "description": "Emagazine Đặng Thùy Dương và những ngày du mục Zanskar kể về câu chuyện khám phá vẻ đẹp tuyệt vời, cũng những hình ảnh siêu đẹp.",
+            "image": "emagazine-nhung-ngay-du-muc-zanskar-768x432.jpeg"
+        },
+        {
+            "id": 4,
+            "name": "Bảng phiên âm từ thông dụng cho khách du lịch Mông Cổ",
+            "description": "Những từ thông dụng cho du khách du lịch Mông Cổ. Từ lời chào, giới thiệu, đến việc tiếp cận…",
+            "image": "nhung-tu-thong-dung-khi-du-lich-mong-co-768x432.jpg"
+        },
+        {
+            "id": 5,
+            "name": "Ẩm thực Mông Cổ - Top 13 món ăn Mông cổ hấp dẫn nhất",
+            "description": "Top 13 món ăn Mông Cổ làm nổi bật ẩm thực du mục: 1. Mì Tsuivan, 2. Bánh bao Buuz,…",
+            "image": "nhung-mon-an-mong-co-hap-dan-nhat-768x432.jpg"
+        },
+        {
+            "id": 6,
+            "name": "Thời điểm tốt nhất để đi du lịch mông cổ",
+            "description": "Thời gian tốt nhất để du lịch Mông Cổ là từ tháng 6 đến tháng 8, khi cảnh quan tươi…",
+            "image": "thoi-diem-tot-de-du-lich-mong-co-768x432.jpg"
+        }
+    ],
+    "listGallery": [
+        {
+            "id": 1,
+            "name": "Gallery Ladakh",
+            "image": "antuong1.jpg",
+            "description": "Ladakh: Nơi những ngọn núi hiểm trở gặp những hồ nước hoang sơ, thiên đường cho những người thích phiêu lưu. Khám phá các tu viện cổ xưa và truyền thống địa phương sôi động trên nền phong cảnh tuyệt đẹp. Ladakh đang chờ bạn khám phá!",
+            "slug": "KHÁM PHÁ",
+            "tag": "green"
+        },
+        {
+            "id": 2,
+            "name": "Gallery Cáp Nhĩ Tân",
+            "image": "antuong2.jpg",
+            "description": "Cáp Nhĩ Tân, Trung Quốc: Xứ sở thần tiên mùa đông với những tác phẩm điêu khắc băng ngoạn mục và sự pha trộn độc đáo giữa các nền văn hóa. Khám phá phép thuật băng giá!",
+            "slug": "VÙNG ĐẤT TUYẾT",
+            "tag": "pink"
+        },
+        {
+            "id": 3,
+            "name": "Gallery Everest",
+            "image": "antuong3.jpg",
+            "description": "Đỉnh Everest: Điểm cao nhất của Trái đất, đỉnh cao của sự phiêu lưu và khả năng phục hồi của con người. Khám phá trại căn cứ Everest đầy cảm hứng.",
+            "slug": "TRÊN ĐỈNH THẾ GIỚI",
+            "tag": "yellow"
+        },
+        {
+            "id": 4,
+            "name": "Gallery Ladakh Motor Adventure",
+            "image": "antuong4.jpg",
+            "description": "Bắt tay vào Cuộc phiêu lưu bằng mô tô ở Ladakh, một chuyến đi ly kỳ qua những cảnh quan tuyệt đẹp và hòa mình vào văn hóa. Trải nghiệm dãy Himalaya hơn bao giờ hết!",
+            "slug": "MOTOR TRIP",
+            "tag": "orange"
+        },
+        {
+            "id": 5,
+            "name": "Gallery Bhutan",
+            "image": "antuong5.jpg",
+            "description": "Bhutan: Một vương quốc thanh bình trên dãy Himalaya với những tu viện cổ kính, cảnh quan tuyệt đẹp và tập trung vào hạnh phúc. Khám phá sự quyến rũ độc đáo của nó!",
+            "slug": "VÙNG HẠNH PHÚC",
+            "tag": "brown"
+        },
+        {
+            "id": 6,
+            "name": "Gallery Tây Tạng",
+            "image": "antuong6.jpg",
+            "description": "Tây Tạng: “Mái nhà thế giới”, nơi hội tụ tâm linh và cảnh quan tuyệt đẹp. Đắm chìm trong nền văn hóa độc đáo và vẻ đẹp tự nhiên của nó.",
+            "slug": "VÙNG ĐẤT MẬT TÔNG",
+            "tag": "pink"
+        },
+        {
+            "id": 7,
+            "name": "Gallery Annapurna",
+            "image": "antuong7.jpg",
+            "description": "Annapurna, thiên đường ở dãy Himalaya, mang đến cho người đi bộ khung cảnh núi non ngoạn mục, rừng đỗ quyên tươi tốt và trải nghiệm văn hóa phong phú. Đi bộ qua những con đường mòn để khám phá sự kỳ diệu của vùng Annapurna.",
+            "slug": "TREK HIMALAYAS",
+            "tag": "green"
+        },
+        {
+            "id": 8,
+            "name": "Gallery Ấn Độ",
+            "image": "antuong8.jpg",
+            "description": "Ấn Độ, một tấm thảm rực rỡ với nhiều nền văn hóa và cảnh quan đa dạng, hứa hẹn một chuyến phiêu lưu để đời. Từ Taj Mahal mang tính biểu tượng đến chiều sâu tâm linh của Varanasi, hãy khám phá những trải nghiệm dưới kính vạn hoa mà Ấn Độ mang lại.",
+            "slug": "NƠI NGUỒN CỘI CỦA PHẬT GIÁO",
+            "tag": "blue"
+        }
+    ]
+}

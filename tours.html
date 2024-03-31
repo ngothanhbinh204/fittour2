@@ -1,0 +1,264 @@
+<section class="bsb-hero-5 mb-1 img-banner-all" style="background-image: url('img/img-bg-shop.jpeg');">
+    <div class="mask text-light d-flex justify-content-center flex-column text-center"
+        style="background-color: rgba(46, 46, 46, 0.5)">
+        <div style="min-height: 400px;" class="container-fluid position-relative d-flex align-items-center">
+            <div class="container-xxl">
+                <div style="height: 100%;" class="col-12 d-flex justify-content-center text-center">
+                    <div class=" box-content-banner rounded-4 p-3 text-white ">
+                        <h3 class=" fw-bold mb-4">Tour du lịch nước ngoài 2024
+                        </h3>
+                        <p class="">
+                        <p class="col-12 "><strong>Du lịch có Guu: đi hoang dã, đi trekking,
+                                đi hikking, đi nghỉ dưỡng, motor adventure, đi một mình, roadtrip…</strong> – chuyến
+                            du
+                            lịch có
+                            Guu là những gì riêng biệt, phong cách du lịch đầy chất mà bạn cùng Fit tạo ra.</p>
+                        <span>
+                            Chọn một hành trình của bạn, điền vào hộ chiếu của bạn những cuộc phiêu lưu cùng Fit
+                            Tour.
+                        </span>
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+
+<section>
+
+    <div class="container-fluid ">
+        <div class="row p-3">
+            <!-- box-search -->
+            <div class="col-sm-12 col-md-4 col-lg-3 bg-banner1 p-3">
+                <div class="box-filler">
+                    <h2>Lọc kết quả</h2>
+                    <div class="col-12 d-flex justify-content-end mt-3">
+                        <button ng-show="loadLiMit > 6" ng-click="collapse()" type="button" class=" btn btn-lg "> Thu
+                            Gọn
+                            <i class="bi bi-arrows-collapse text-success"></i></button>
+                    </div>
+                    <form>
+                        <div class="mb-3">
+                            <label for="" class="form-label fw-bold">Địa điểm</label>
+                            <select class="form-select" ng-model="selectedCategory" ng-change="filterTours()">
+                                <option value="">-- Tất Cả ---</option>
+                                <option ng-repeat="category in listCategory" value="{{category.id}}">
+                                    {{category.name}}</option>
+                            </select>
+
+
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+            <!-- End box-search -->
+
+            <!-- Box-product -->
+
+
+            <div class="col-sm-12 col-md-8 col-lg-9">
+                <!-- <span class="fw-bold"> <i class="bi bi-bookmarks-fill text-danger"></i> Trang {{currentPage}} /
+                    <span ng-bind="totalpage"></span>
+                </span>
+                <input type="text" ng-model="searchKeyword" placeholder="Nhập từ khóa tìm kiếm">
+                <form ng-model="searchKeyword" class="d-flex" role="search">
+                    <input type="text" ng-model="searchKeyword" placeholder="Nhập từ khóa tìm kiếm">
+                    <button ng-click="search()">Tìm kiếm</button>
+                </form>
+                <div class="inline-flex d-flex justify-content-center ">
+                    <button ng-click="beginPage()" ng-disabled="currentPage == 1 || currentPage == 2"
+                        class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l">
+                        <i class="bi bi-arrow-return-left"></i> </button>
+                    <button ng-click="prevPage()" ng-disabled="currentPage == 1"
+                        class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l">
+                        <i class="bi bi-chevron-left"></i> </button>
+                    <button ng-click="nextPage()" ng-disabled="currentPage == totalPages()"
+                        class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l">
+                        <i class="bi bi-chevron-right"></i> </button>
+                    <button ng-click="endPage()" ng-disabled="currentPage == totalPages()"
+                        class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r">
+                        <i class="bi bi-arrow-return-right"></i>
+                    </button>
+                </div> -->
+                <div class="row">
+
+
+                    <div class="col-sm-12 col-md-6 col-lg-4" ng-repeat=" tour in filteredTours | limitTo:loadLiMit ">
+                        <div class="card shadow">
+                            <img src="img/{{tour.image}}" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title my-4 fw-bold text-secondary-emphasis">
+                                    {{tour.name}}
+                                </h5>
+                                <div class="d-flex justify-content-between py-3 align-items-center">
+                                    <div class="box-cash fw-bold ">
+                                        <a style="color: #ff5656;" class="text-decoration-none" href=""><i
+                                                class="bi bi-cash-stack mx-1"></i> {{tour.price | number}} đ</a>
+                                    </div>
+                                    <a href="#!detail/{{tour.id}}" class="btn btn-outline-primary">Xem Chi Tiết</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-12 d-flex justify-content-center mt-5">
+                        <button ng-show="loadLiMit < tours.length" ng-click="loadMore()" type="button"
+                            class=" text-white fw-bold btn bg-color-main btn-lg px-5 py-3">Xem
+                            thêm
+                            Tour</button>
+                    </div>
+
+
+                </div>
+            </div>
+            <!-- End Box-product -->
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container-fluid mt-5 p-3">
+        <div class="row d-flex justify-content-center">
+            <h3 class=" fw-bold text-center">Những vùng đất thú vị để khám phá</h3>
+            <hr class=" my-3 border-0 bg-secondary" style=" opacity: 1; height: 4px" />
+            <div class="list-item d-flex justify-content-center">
+                <div class="item d-flex flex-column p-2">
+                    <img class="rounded-4 shadow mb-2" width="200px" src="img/tour-himalayas-standee.jpg" alt="">
+                    <span class="fw-bold text-white">Tour Himalayas</span>
+                </div>
+                <div class="item d-flex flex-column p-2">
+                    <img class="rounded-4 shadow mb-2" width="200px" src="img/tour-nepal-standee.jpg" alt="">
+                    <span class="fw-bold text-white">Tour Nepal</span>
+                </div>
+                <div class="item d-flex flex-column p-2">
+                    <img class="rounded-4 shadow mb-2" width="200px" src="img/tour-ladakh-standee.jpg" alt="">
+                    <span class="fw-bold text-white">Tour Ladakh</span>
+                </div>
+                <div class="item d-flex flex-column p-2">
+                    <img class="rounded-4 shadow mb-2" width="200px" src="img/tour-trung-dong-standee.jpg" alt="">
+                    <span class="fw-bold text-white">Tour Trung Đông </span>
+                </div>
+                <div class="item d-flex flex-column p-2">
+                    <img class="rounded-4 shadow mb-2" width="200px" src="img/tour-pakistan.jpg" alt="">
+                    <span class="fw-bold text-white">Tour Pakistan </span>
+                </div>
+                <div class="item d-flex flex-column p-2">
+                    <img class="rounded-4 shadow mb-2" width="200px" src="img/tour-ai-cap-standee-240x300.jpg" alt="">
+                    <span class="fw-bold text-white">Tour Ai Cập </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="my-5">
+    <div class="container-xl">
+        <div class="row g-0">
+            <div class="col-sm-12 col-md-5 col-lg-7 bg-primary d-flex justify-content-center align-items-center">
+                <div class="title ">
+                    <h3 class="text-white fw-bold text-center"> Du lịch có Guu – Hành trình của trải nghiệm giá trị
+                    </h3>
+                </div>
+            </div>
+            <div class=" col-sm-12 col-md-4 col-lg-2 d-flex justify-content-center ">
+                <img src=" img/chup-anh-cung-ngoi-den-stupa-o-nepal-tren-duong-di-everest-base-camp-300x300.jpg" alt="">
+            </div>
+            <div class="col-sm-12 col-md-3 col-lg-3 bg-primary d-flex justify-content-center align-items-center">
+                <div class="grid gap-0 column-gap-3">
+                    <span class="fs-2 p-2 g-col-6 text-white "><i class="bi bi-facebook"></i></span>
+                    <span class="fs-2 p-2 g-col-6 text-white "><i class="bi bi-chat"></i></span>
+                    <span class="fs-2 p-2 g-col-6 text-white "><i class="bi bi-telephone"></i></span>
+                    <span class="fs-2 p-2 g-col-6 text-white "><i class="bi bi-map-fill"></i></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class=" my-5">
+    <div class=" container-xl ">
+
+        <div class=" row row-cols-1 row-cols-md-3 g-3">
+            <div class="col-sm-12 col-md-6 col-lg-3 ">
+                <div class="card h-100 border-0 bg-transparent ">
+                    <div class="card-body">
+                        <h4 class="card-title fw-bold ">Tại sao Fit Tour sẽ mang lại điều đặc biệt cho hành trình
+                            của bạn?</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-3 p-3">
+                <div class="card h-100 p-4 border-0 rounded-3 shadow">
+                    <img src="img/hanh-trinh-tren-day-himalayas-fit-tour-2022-300x169.jpg" class="rounded-3" alt="...">
+                    <div class="card-body">
+                        <p class="card-title fw-bold">Kinh nghiệm dầy dặn</p>
+                        <p class="card-text pt-2">Tổ chức thành công 57 chuyến đi Himalayas – Trung Đông –
+                            Bắc Phi,
+                            120 đoàn khởi hành khác nhau trong năm qua</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-3 p-3">
+                <div class="card h-100 p-4 border-0 rounded-3 shadow">
+                    <img src="img/buoi-trao-doi-va-tu-van-truoc-chuyen-di-trek-everest-base-camp-300x169.jpg"
+                        class="rounded-3" alt="...">
+                    <div class="card-body">
+                        <p class="card-title fw-bold">Đi cùng chuyên gia</p>
+                        <p class="card-text pt-2">Fit Tour đã cùng Kami Rita, người nắm kỷ lục 26 lần chinh
+                            phục
+                            Everest trên hành trình EBC.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-3 p-3">
+                <div class="card h-100 p-4 border-0 rounded-3 shadow bg-warning">
+                    <img src="img/doan-khach-fit-tour-check-in-diem-de-everest-base-camp-300x169.jpg" class="rounded-3"
+                        alt="...">
+                    <div class="card-body">
+                        <p class="card-title fw-bold">Chinh phục những vùng đất của giấc mơ</p>
+                        <p class="card-text pt-2">Dãy Himalayas, Khu vực Trung Đông – Con đường tơ lụa hay nhiều
+                            vùng đất đặc biệt. Fit Tour luôn muốn cùng người Việt chinh phục những vùng đất độc đáo,
+                            mà chúng ta từng nghĩ chỉ trong giấc mơ chinh phục.</p>
+                        <p class="card-text pt-2">
+                            Và không chỉ Trekking, Hikking hay Camping… Hãy cùng khám phá kỳ quan này cùng với Guu
+                            riêng biệt với Fit Tour.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+<section class="bsb-hero-5 px-3 overlay-banner-3" style="background-image: url('img/banner-1.jpg');">
+    <div style="min-height: 320px;" class="container-fluid position-relative d-flex align-items-center">
+        <div class="container-xxl">
+            <div style="height: 100%;" class="col-sm-12  d-flex">
+                <div class=" text-white col-sm-12 col-md-6 col-lg-6  box-content-banner  rounded-4 p-3">
+                    <p>Chỉ riêng đoàn của bạn</p>
+                    <h3 class="fw-bold mb-4">Đặt lịch trình riêng cho chuyến đi
+                    </h3>
+                    <p class="">
+                        <span class="col-12 col-sm-10 col-md-8 col-xxl-7">Đặt Tour riêng để tận hưởng chuyến đi đặc
+                            biệt dành riêng cho bạn. Chúng tôi có đội ngũ Trip Planner chuyên nghiệp để thiết kế
+                            chương trình du lịch riêng dành cho bạn và gia đình.</span>
+                    </p>
+                    <div class="d-grid gap-3 d-sm-flex mt-2">
+
+                        <div
+                            class="text-white button-color fs-6 fw-semibold btn bsb-btn-2xl btn-outline border border-2">
+                            Lên Plan Ngay
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
