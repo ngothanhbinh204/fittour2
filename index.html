@@ -67,9 +67,9 @@
 
 
             //Đọc dữ liệu từ json server rồi đổ mảng vào trong products    
-            $http.get("http://localhost:3000/tours")
+            $http.get("https://ngothanhbinh204.github.io/apiDulichcoguu/db.json")
                 .then(function (reponse) {
-                    $scope.tours = reponse.data;
+                    $scope.tours = reponse.data.tours;
                     console.log($scope.tours);
                     console.log($scope.tours.length);
 
@@ -137,36 +137,39 @@
                     // Lấy sản phẩm chi tiết thông qua id truyền vào routeParams
                     $scope.detailTour = $scope.tours.find(item => item.id == $routeParams.id);
                 });
-            $http.get("http://localhost:3000/listCategory")
+            $http.get("https://ngothanhbinh204.github.io/apiDulichcoguu/db.json")
                 .then(function (reponse) {
-                    $scope.listCategory = reponse.data;
+                    $scope.listCategory = reponse.data.listCategory;
                     console.log($scope.listCategory);
                     // Lọc danh mục Tour
 
 
                     // $scope.detailTour = $scope.category.find(item => item.id == $routeParams.id);
                 });
-            $http.get("http://localhost:3000/blogs")
+            $http.get("https://ngothanhbinh204.github.io/apiDulichcoguu/db.json")
                 .then(function (reponse) {
-                    $scope.blogs = reponse.data;
+                    $scope.blogs = reponse.data.blogs;
                     console.log($scope.blogs);
                     // $scope.detailTour = $scope.category.find(item => item.id == $routeParams.id);
                 });
-            $http.get("http://localhost:3000/listGallery")
+            $http.get("https://ngothanhbinh204.github.io/apiDulichcoguu/db.json")
                 .then(function (reponse) {
-                    $scope.listGallery = reponse.data;
+                    $scope.listGallery = reponse.data.listGallery;
                     console.log($scope.listGallery);
                     $scope.galleryDetail = $scope.listGallery.find(item => item.id == $routeParams.id);
                 });
 
-            // Lấy Tour + Category
-            var toursRequest = $http.get('http://localhost:3000/tours');
-            var categoriesRequest = $http.get('http://localhost:3000/listCategory');
-            $q.all([toursRequest, categoriesRequest])
-                .then(function (responses) {
-                    $scope.tours = responses[0].data;
-                    $scope.listCategory = responses[1].data;
+            $http.get('https://ngothanhbinh204.github.io/apiDulichcoguu/db.json')
+                .then(function (response) {
+                    // Kiểm tra dữ liệu phản hồi
+                    console.log("API Response: ", response);
 
+                    // Truy cập dữ liệu phản hồi
+                    $scope.tours = response.data.tours;
+                    $scope.listCategory = response.data.listCategory;
+
+                    console.log("API Tours: ", $scope.tours);
+                    console.log("API List Category: ", $scope.listCategory);
                     // Xử lý dữ liệu toursResponse và categoriesResponse tại đây
                     console.log('Dữ liệu tours:', $scope.tours);
                     console.log('Dữ liệu danh mục:', $scope.listCategory);
