@@ -5,6 +5,13 @@
     background-size: cover;
 }
 
+.bg-register {
+    background-color: #FFE8D3;
+}
+
+
+
+
 .text-title {
     color: #565454;
 }
@@ -55,6 +62,13 @@
 
 .color-second {
     color: #FF8C00;
+}
+
+.form-control:focus {
+    border-color: #ced4da;
+    /* Màu viền khi input không được focus */
+    box-shadow: none;
+    /* Bỏ hiệu ứng shadow khi input được focus */
 }
 
 .button-home {

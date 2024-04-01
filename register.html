@@ -1,0 +1,144 @@
+<div class="main">
+    <!-- Sign up form -->
+    <section class="signup my-5">
+        <div class="container">
+            <div class="row d-flex justify-content-center g-0">
+                <div class="col-sm-12 col-lg-7 signup-form p-5 shadow d-flex">
+                    <div class="box-content my-auto w-100 d-flex flex-column ">
+                        <div class="mb-4">
+                            <div class="title mb-4">
+                                <h2 class="form-title fw-bold">Đăng ký thành viên FitTour</h2>
+                                <span class="py-5 fst-italic">Đăng ký tài khoản Fittour để nhận nhiều ưu đãi và cơ hội
+                                    du
+                                    lịch Mông
+                                    Cổ,
+                                    Trung Quốc,
+                                    Myanmar, Nhật Bản, ...</span>
+                            </div>
+                            <span class="fw-bold ">Dòng nhập có (<span class="text-danger">*</span>) là bắt buộc
+                                :</span>
+                        </div>
+                        <form name="formRegister" ng-submit="submitRegister()" novalidate>
+
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label fw-bold "> <i
+                                        class="mx-3 bi bi-person-fill"></i>Họ
+                                    Và
+                                    Tên</label>
+                                (<span class="text-danger">*</span>)
+                                <i ng-show="formRegister.name.$valid"
+                                    class="text-success fw-bold bi bi-check-circle-fill"></i>
+                                <input ng-model="name" name="name" type="text"
+                                    class="form-control border-0 border-bottom" id="name" minlength="5" maxlength="25"
+                                    required>
+                                <span class="fw-small text-danger"
+                                    ng-show="formRegister.name.$invalid && formRegister.name.$touched">
+                                    Vui lòng nhập tên ...
+                                </span>
+                            </div>
+
+
+
+                            <div class="mb-3">
+                                <div class="box-label d-flex justify-content-between">
+                                    <div class="box">
+                                        <label for="exampleInputPassword1" class="form-label fw-bold "><i
+                                                class="mx-3 bi bi-lock-fill"></i>Mật
+                                            Khẩu</label>
+                                        (<span class="fw-small text-danger">*</span>)
+                                        <i ng-show="formRegister.password.$valid"
+                                            class="text-success fw-bold bi bi-check-circle-fill"></i>
+                                    </div>
+                                    <span ng-click="eyesClick()">
+                                        <i class="bi bi-eye-slash"
+                                            ng-class="{'bi-eye': showPassword, 'bi-eye-slash': !showPassword}"></i>
+                                    </span>
+                                </div>
+
+
+
+                                <input name="password" id="password" type="{{showPassword ? 'text' : 'password'}}"
+                                    ng-model="password" class="form-control border-0 border-bottom"
+                                    ng-pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/" required>
+                                <span class="fw-small text-danger"
+                                    ng-show="formRegister.password.$error.required && formRegister.password.$touched ">
+                                    Vui Lòng Nhập Mật Khẩu !!!
+                                </span>
+                                <span class="fw-small text-danger"
+                                    ng-show="formRegister.password.$error.pattern && !formRegister.password.pristine ">
+                                    Mật khẩu phải dạng : Ntbinh123@ - Ít nhất 8 ký tự
+                                </span>
+                            </div>
+
+
+
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label fw-bold "><i
+                                        class="mx-3 bi bi-envelope-fill"></i>Email</label>
+                                (<span class="fw-small text-danger">*</span>)
+                                <i ng-show="formRegister.email.$valid"
+                                    class="text-success fw-bold bi bi-check-circle-fill"></i>
+                                <input ng-model="email" name="email" type="email"
+                                    class=" border-0 border-bottom form-control" id="email"
+                                    ng-pattern="/^[^\s@]+@(gmail\.com|fpt\.edu\.vn)$/" required>
+                                <span class="fw-small text-danger"
+                                    ng-show="formRegister.email.$error.required && formRegister.email.$touched ">
+                                    Vui Lòng Nhập Email !!!
+                                </span>
+                                <span class="fw-small text-danger"
+                                    ng-show="(formRegister.email.$error.pattern && !formRegister.email.$pristine) ">
+                                    Email Không Hợp lệ !!!
+                                </span>
+                            </div>
+                            <div class="mb-5">
+                                <label for="exampleInputEmail1" class="form-label fw-bold "><i
+                                        class="mx-3 bi bi-telephone-fill"></i>
+                                    Số
+                                    Điện Thoại</label>
+                                <i ng-show="!formRegister.phone.$error.pattern && !formRegister.phone.$pristine"
+                                    class="text-success fw-bold bi bi-check-circle-fill"></i>
+                                <input ng-model="phone" name="phone" type="text"
+                                    class="form-control border-0 border-bottom" id="phone" ng-pattern="/^0[0-9]{9}$/"
+                                    minlength="0" maxlength="10">
+                                <span class="fw-small text-danger"
+                                    ng-show="formRegister.phone.$error.pattern && !formRegister.phone.$pristine">
+                                    Số Điện Thoại Không Hợp lệ !!!
+                                </span>
+                            </div>
+
+                            <div class="d-flex justify-content-center">
+                                <button
+                                    ng-disabled="formRegister.name.$invalid || formRegister.password.$invalid || formRegister.email.$invalid || formRegister.phone.$invalid "
+                                    type="submit"
+                                    class="btn btn-lg button-home text-white bg-color-second fw-bold btn tn-outline rounded-4 ">Đăng
+                                    Ký</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-lg-5 signup-image text-center my-auto">
+                    <img width="100%" src="img/banner-register.jpg" alt="sing up image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<!-- <script>
+    var appb = angular.module('myApp', []);
+
+    appb.controller('eyesCtrl', function ($scope) {
+        $scope.test = "tessttt";
+        // $scope.showPassword = false;
+
+        // $scope.togglePasswordVisibility = function () {
+        //     $scope.showPassword = !$scope.showPassword;
+        // };
+        $scope.eyesClick = function () {
+            //  $scope.showPassword = !$scope.showPassword;
+            console.log("aaaa");
+        };
+    });
+</script> -->
