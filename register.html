@@ -1,4 +1,4 @@
-<div class="main">
+<div class="main" ng-controller="registerCtrl" ng-click="hideErrorMessage()">
     <!-- Sign up form -->
     <section class="signup my-5">
         <div class="container">
@@ -17,24 +17,60 @@
                             </div>
                             <span class="fw-bold ">Dòng nhập có (<span class="text-danger">*</span>) là bắt buộc
                                 :</span>
-                        </div>
-                        <form name="formRegister" ng-submit="submitRegister()" novalidate>
 
+                            <!-- <span ng-show="alertReqSuccess" class="text-success">{{alertReqSuccess}}</span>
+                            <div ng-show="alertReqSuccess"
+                                class="fw-bold alert alert-success d-flex justify-content-between" role="alert">
+                                <span>{{alertReqSuccess}}</span>
+                                <i class="bi bi-check-all"></i>
+                            </div> -->
+                            <!-- Thành Công đăng ký -->
+
+                            <div ng-show="alertReqSuccess"
+                                class="fw-bold alert alert-success d-flex align-items-center justify-content-between alig"
+                                role="alert">
+                                <span>{{alertReqSuccess}}</span>
+                                <a href="#!login" class="text-success d-flex align-items-center text-decoration-none">
+                                    Đăng Nhập Ngay
+                                    <i class="fw-bold fs-4 bi bi-check-all mx-2"></i>
+                                </a>
+                            </div>
+                            <!-- Thành Công đăng ký -->
+
+                            <!-- Lỗi đăng ký -->
+                            <div ng-show="alertReqFail"
+                                class="fw-bold alert alert-danger d-flex align-items-center justify-content-between alig"
+                                role="alert">
+                                <span>{{alertReqFail}}</span>
+                            </div>
+                            <!-- Lỗi đăng ký -->
+
+
+                            <!-- <div ng-show="showErrorNameMessage">
+                                {{errorNameMessage}}
+                            </div> -->
+
+
+                        </div>
+                        <form name="formRegister" ng-submit="register($event)" novalidate>
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label fw-bold "> <i
                                         class="mx-3 bi bi-person-fill"></i>Họ
                                     Và
                                     Tên</label>
                                 (<span class="text-danger">*</span>)
-                                <i ng-show="formRegister.name.$valid"
+                                <i ng-show="formRegister.username.$valid"
                                     class="text-success fw-bold bi bi-check-circle-fill"></i>
-                                <input ng-model="name" name="name" type="text"
-                                    class="form-control border-0 border-bottom" id="name" minlength="5" maxlength="25"
-                                    required>
+                                <input ng-model="user.username" name="username" type="text"
+                                    class="form-control border-0 border-bottom" id="username" minlength="5"
+                                    maxlength="25" required>
                                 <span class="fw-small text-danger"
-                                    ng-show="formRegister.name.$invalid && formRegister.name.$touched">
+                                    ng-show="formRegister.username.$invalid && formRegister.username.$touched">
                                     Vui lòng nhập tên ...
                                 </span>
+                                <div ng-show="showErrorNameMessage" class="fw-small text-danger">
+                                    <span>{{errorNameMessage}}</span>
+                                </div>
                             </div>
 
 
@@ -58,7 +94,7 @@
 
 
                                 <input name="password" id="password" type="{{showPassword ? 'text' : 'password'}}"
-                                    ng-model="password" class="form-control border-0 border-bottom"
+                                    ng-model="user.password" class="form-control border-0 border-bottom"
                                     ng-pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/" required>
                                 <span class="fw-small text-danger"
                                     ng-show="formRegister.password.$error.required && formRegister.password.$touched ">
@@ -68,6 +104,8 @@
                                     ng-show="formRegister.password.$error.pattern && !formRegister.password.pristine ">
                                     Mật khẩu phải dạng : Ntbinh123@ - Ít nhất 8 ký tự
                                 </span>
+
+
                             </div>
 
 
@@ -78,7 +116,7 @@
                                 (<span class="fw-small text-danger">*</span>)
                                 <i ng-show="formRegister.email.$valid"
                                     class="text-success fw-bold bi bi-check-circle-fill"></i>
-                                <input ng-model="email" name="email" type="email"
+                                <input ng-model="user.email" name="email" type="email"
                                     class=" border-0 border-bottom form-control" id="email"
                                     ng-pattern="/^[^\s@]+@(gmail\.com|fpt\.edu\.vn)$/" required>
                                 <span class="fw-small text-danger"
@@ -89,6 +127,9 @@
                                     ng-show="(formRegister.email.$error.pattern && !formRegister.email.$pristine) ">
                                     Email Không Hợp lệ !!!
                                 </span>
+                                <div ng-show="showErrorEmailMessage" class="fw-small text-danger">
+                                    <span>{{errorEmailMessage}}</span>
+                                </div>
                             </div>
                             <div class="mb-5">
                                 <label for="exampleInputEmail1" class="form-label fw-bold "><i
@@ -97,18 +138,21 @@
                                     Điện Thoại</label>
                                 <i ng-show="!formRegister.phone.$error.pattern && !formRegister.phone.$pristine"
                                     class="text-success fw-bold bi bi-check-circle-fill"></i>
-                                <input ng-model="phone" name="phone" type="text"
+                                <input ng-model="user.phone" name="phone" type="text"
                                     class="form-control border-0 border-bottom" id="phone" ng-pattern="/^0[0-9]{9}$/"
                                     minlength="0" maxlength="10">
                                 <span class="fw-small text-danger"
                                     ng-show="formRegister.phone.$error.pattern && !formRegister.phone.$pristine">
                                     Số Điện Thoại Không Hợp lệ !!!
                                 </span>
+                                <div ng-show="showErrorPhoneMessage" class="fw-small text-danger">
+                                    <span>{{errorPhoneMessage}}</span>
+                                </div>
                             </div>
 
                             <div class="d-flex justify-content-center">
                                 <button
-                                    ng-disabled="formRegister.name.$invalid || formRegister.password.$invalid || formRegister.email.$invalid || formRegister.phone.$invalid "
+                                    ng-disabled="formRegister.username.$invalid || formRegister.password.$invalid || formRegister.email.$invalid || formRegister.phone.$invalid "
                                     type="submit"
                                     class="btn btn-lg button-home text-white bg-color-second fw-bold btn tn-outline rounded-4 ">Đăng
                                     Ký</button>

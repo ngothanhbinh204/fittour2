@@ -26,11 +26,11 @@
 
 <body ng-app="myapp">
     <div ng-include="'header.html'"></div>
-
     <!-- Content -->
 
 
-    <div ng-view></div>
+    <div ng-view>
+    </div>
 
 
     <!-- Content -->
@@ -60,52 +60,55 @@
                 .otherwise({ templateUrl: "home.html", controller: "dulichcoguuCrtl" })
         })
 
-        app.directive('customValidator', function () {
-            return {
-                require: 'ngModel',
-                link: function (scope, element, attrs, ngModelCtrl) {
+        // app.directive('customValidator', function () {
+        //     return {
+        //         require: 'ngModel',
+        //         link: function (scope, element, attrs, ngModelCtrl) {
 
-                }
-            }
-        })
-
-        // app.controller("eyeCtrl", function ($scope) {
-        //     // $scope.showPassword = false;
-
-        //     // $scope.togglePasswordVisibility = function () {
-        //     //     $scope.showPassword = !$scope.showPassword;
-        //     // };
-        //     $scope.eyesClick = function () {
-        //         //  $scope.showPassword = !$scope.showPassword;
-        //         console.log("aaaa");
-        //     };
-        // });
+        //         }
+        //     }
+        // })
 
 
 
-        app.controller("dulichcoguuCrtl", function ($scope, $rootScope, $routeParams, $http, $q) {
+
+        app.controller("dulichcoguuCrtl", function ($scope, $route, $rootScope, $routeParams, $http, $q, $location) {
             //Khai báo 1 mảng products rỗng 
             $scope.tours = [];
             $scope.listCategory = [];
             $scope.blogs = []
             $scope.listGallery = [];
             $scope.loadLiMit = 6;
+            $scope.users = [];
+            $scope.currentUser = "";
+            $scope.test = "";
 
-            // show password
-            $scope.showPassword = false;
 
 
-            $scope.eyesClick = function () {
-                $scope.showPassword = !$scope.showPassword;
+            // lấy dữu liệu từ localStorage để xuất thông tin user lên Header
+            $scope.currentUser = JSON.parse(localStorage.getItem('user_info'));
+            // console.log("User2: ", $scope.currentUser);
+
+
+
+            $scope.logout = function () {
+                localStorage.removeItem('user_info');
+                window.location.reload();
             };
+
+
+
+
+
+
 
 
             //Đọc dữ liệu từ json server rồi đổ mảng vào trong products    
             $http.get("https://ngothanhbinh204.github.io/apiDulichcoguu/db.json")
                 .then(function (reponse) {
                     $scope.tours = reponse.data.tours;
-                    console.log($scope.tours);
-                    console.log($scope.tours.length);
+                    // console.log($scope.tours);
+                    // console.log($scope.tours.length);
 
 
                     $scope.loadMore = function () {
@@ -171,42 +174,52 @@
                     // Lấy sản phẩm chi tiết thông qua id truyền vào routeParams
                     $scope.detailTour = $scope.tours.find(item => item.id == $routeParams.id);
                 });
-            $http.get("https://ngothanhbinh204.github.io/apiDulichcoguu/db.json")
+
+            // GET USERS
+            $http.get("http://localhost:3000/users")
                 .then(function (reponse) {
-                    $scope.listCategory = reponse.data.listCategory;
-                    console.log($scope.listCategory);
+                    $scope.users = reponse.data.users;
+                    //   console.log($scope.users);
+
+                    // $scope.detailTour = $scope.category.find(item => item.id == $routeParams.id);
+                });
+
+            $http.get("http://localhost:3000/listCategory")
+                .then(function (reponse) {
+                    $scope.listCategory = reponse.data;
+                    //  console.log($scope.listCategory);
                     // Lọc danh mục Tour
 
 
                     // $scope.detailTour = $scope.category.find(item => item.id == $routeParams.id);
                 });
-            $http.get("https://ngothanhbinh204.github.io/apiDulichcoguu/db.json")
+            $http.get("https://localhost:3000/blogs")
                 .then(function (reponse) {
-                    $scope.blogs = reponse.data.blogs;
-                    console.log($scope.blogs);
+                    $scope.blogs = reponse.data;
+                    // console.log($scope.blogs);
                     // $scope.detailTour = $scope.category.find(item => item.id == $routeParams.id);
                 });
-            $http.get("https://ngothanhbinh204.github.io/apiDulichcoguu/db.json")
+            $http.get("http://localhost:3000/listGallery")
                 .then(function (reponse) {
-                    $scope.listGallery = reponse.data.listGallery;
-                    console.log($scope.listGallery);
+                    $scope.listGallery = reponse.data;
+                    // console.log($scope.listGallery);
                     $scope.galleryDetail = $scope.listGallery.find(item => item.id == $routeParams.id);
                 });
 
             $http.get('https://ngothanhbinh204.github.io/apiDulichcoguu/db.json')
                 .then(function (response) {
                     // Kiểm tra dữ liệu phản hồi
-                    console.log("API Response: ", response);
+                    //   console.log("API Response: ", response);
 
                     // Truy cập dữ liệu phản hồi
                     $scope.tours = response.data.tours;
                     $scope.listCategory = response.data.listCategory;
 
-                    console.log("API Tours: ", $scope.tours);
-                    console.log("API List Category: ", $scope.listCategory);
-                    // Xử lý dữ liệu toursResponse và categoriesResponse tại đây
-                    console.log('Dữ liệu tours:', $scope.tours);
-                    console.log('Dữ liệu danh mục:', $scope.listCategory);
+                    // console.log("API Tours: ", $scope.tours);
+                    // console.log("API List Category: ", $scope.listCategory);
+                    // // Xử lý dữ liệu toursResponse và categoriesResponse tại đây
+                    // console.log('Dữ liệu tours:', $scope.tours);
+                    // console.log('Dữ liệu danh mục:', $scope.listCategory);
 
                     // Lọc sản phẩm theo Danh Mục
                     $scope.selectedCategory = '';
@@ -214,8 +227,8 @@
                     $scope.filterTours = function () {
                         if ($scope.selectedCategory) {
                             $scope.filteredTours = $scope.tours.filter(tour => tour.cateid == $scope.selectedCategory);
-                            console.log($scope.selectedCategory);
-                            console.log($scope.filteredTours);
+                            // console.log($scope.selectedCategory);
+                            // console.log($scope.filteredTours);
                         } else {
                             $scope.filteredTours = $scope.tours;
                         }
@@ -229,6 +242,250 @@
 
 
         });
+
+
+        // Controller Other -------------------------------
+
+        // Controller Register
+        app.controller("registerCtrl", function ($scope, $rootScope, $http, $routeParams) {
+            // Register
+
+            $scope.user = {};
+            $scope.userRegister = [];
+            $scope.showPassword = false;
+            $scope.alertReqSuccess = localStorage.getItem('alertReqSuccess');
+            $scope.alertReqFail = localStorage.getItem('alertReqFail');
+            $scope.alertName = "";
+            $scope.alertEmail = "";
+            $scope.alertPhone = "";
+
+            // Tên Lỗi
+            $scope.errorNameMessage = ''; // Biến chứa thông báo lỗi
+            $scope.errorEmailMessage = ''; // Biến chứa thông báo lỗi
+            $scope.errorPhoneMessage = ''; // Biến chứa thông báo lỗi
+
+            // Hiện lỗi
+            $scope.showErrorNameMessage = false; // Biến điều khiển hiển thị thông báo lỗi
+            $scope.showErrorEmailMessage = false; // Biến điều khiển hiển thị thông báo lỗi
+            $scope.showErrorPhoneMessage = false; // Biến điều khiển hiển thị thông báo lỗi
+
+            // Ẩn lỗi
+            $scope.hideErrorMessage = function () {
+                $scope.showErrorNameMessage = false;
+                $scope.showErrorEmailMessage = false;
+                $scope.showErrorPhoneMessage = false;
+            }
+
+            // Nếu có, hiển thị thông báo và xóa khỏi localStorage
+            if ($scope.alertReqSuccess) {
+                //  console.log($scope.alertReqSuccess); // Debug
+                localStorage.removeItem('alertReqSuccess');
+            }
+
+            // Nếu có, hiển thị thông báo và xóa khỏi localStorage
+            if ($scope.alertReqFail) {
+                localStorage.removeItem('alertReqFail');
+            }
+
+            // click showpassword
+            $scope.eyesClick = function () {
+                $scope.showPassword = !$scope.showPassword;
+            };
+
+            // Hàm getUserDataRegister : xử lí bất đồng bộ 
+            $scope.getUserDataRegister = function (callback) {
+                $http.get("http://localhost:3000/users")
+                    .then(function (reponse) {
+                        callback(reponse.data)
+                    })
+                    .catch(function (error) {
+                        console.error('lỗi lấy dữ liệu user:', error);
+                        callback(null, error);
+                    });
+            }
+
+            // đăng ký start
+            $scope.register = function (event) {
+                event.preventDefault();
+                $scope.getUserDataRegister(function (userData, error) {
+                    if (userData) {
+                        $scope.userRegister = userData;
+                        console.log("userRegisterAPi2: ", $scope.userRegister);
+                        var tonTaiUser = false;
+                        angular.forEach($scope.userRegister, function (user) {
+                            var usernameValue = $scope.user.username;
+                            var passwordValue = $scope.user.password;
+                            var emailValue = $scope.user.email;
+                            var phoneValue = $scope.user.phone;
+                            // console.log("username: ", usernameValue);
+                            // console.log("username: ", passwordValue);
+                            // console.log("username: ", emailValue);
+                            // console.log("username: ", phoneValue);
+                            if (user.username === usernameValue || user.email === emailValue || user.phone === phoneValue) {
+                                // tồn Tại -> Lỗi
+                                $scope.alertReqFail = "Tài khoản đã tồn tại";
+                                localStorage.setItem('alertReqFail', 'Tài khoản đã tồn tại');
+                                tonTaiUser = true; // khi tìm thấy người dùng
+                                console.log('Tài khoản tồn tại');
+                                if (user.username === usernameValue) {
+                                    $scope.errorNameMessage = "Tên tài khoản đã tồn tại";
+                                    $scope.showErrorNameMessage = true; // Hiển thị thông báo lỗi
+                                    //$scope.alertName = "Tên tài khoản đã tồn tại";
+                                }
+                                if (user.email === emailValue) {
+                                    $scope.errorEmailMessage = "Email tài khoản đã tồn tại";
+                                    $scope.showErrorEmailMessage = true; // Hiển thị thông báo lỗi                                
+                                }
+                                if (user.phone === phoneValue) {
+                                    $scope.errorPhoneMessage = "Số điện thoại đã tồn tại";
+                                    $scope.showErrorPhoneMessage = true; // Hiển thị thông báo lỗi  
+                                }
+                                return; // stop loop
+                            }
+
+                        });
+
+                        if (!tonTaiUser) {
+                            // bắt đầu đăng ký
+                            fetch('http://localhost:3000/users', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                },
+                                body: JSON.stringify($scope.user),
+                            })
+                                .then(response => {
+                                    if (response.ok) {
+                                        $scope.alertRegister = "Đăng Ký Thành Công !!!";
+                                        localStorage.setItem('alertReqSuccess', 'Đăng Ký Thành Công !!!');
+                                    } else {
+                                        throw new Error('Đăng ký thất bại');
+                                    }
+                                })
+                                .catch(error => {
+                                    localStorage.setItem('alertReqError', 'Đăng Ký Thất Bại !!!');
+                                    $scope.alertRegister = "Đăng Ký Thất Bại";
+                                    console.error('Error registering user:', error);
+                                });
+                            console.log("Người dùng Pass");
+                        }
+                    } else {
+                        console.error('lỗi lấy dữ liệu user - 2:', error);
+                    }
+                });
+            }
+
+            // đăng ký END
+
+
+
+            $scope.register2 = function (event) {
+                var tonTaiUser = false; //Biến cờ để theo dõi xem người dùng đã tồn tại hay không
+                event.preventDefault();
+                // Tìm username có tồn tại trong database không 
+                angular.forEach($scope.userRegister, function (user) {
+                    if (user.username === username) {
+                        $scope.alertReqFail = "Tài khoản đã tồn tại. Vui lòng chọn tên người dùng khác";
+                        localStorage.setItem('alertReqFail', 'Tài khoản đã tồn tại. Vui lòng chọn tên người dùng khác');
+                        console.log("Người dùng tồn tại");
+                        tonTaiUser = true; // khi tìm thấy người dùng
+                        return; // stop loop
+                        console.log($scope.userRegister);
+                    }
+                });
+                console.log(tonTaiUser);
+
+                if (!tonTaiUser) {
+                    fetch('http://localhost:3000/users', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify($scope.user),
+                    })
+                        .then(response => {
+                            if (response.ok) {
+                                $scope.alertRegister = "Đăng Ký Thành Công !!!";
+                                localStorage.setItem('alertReqSuccess', 'Đăng Ký Thành Công !!!');
+                            } else {
+                                throw new Error('Đăng ký thất bại');
+                            }
+                        })
+                        .catch(error => {
+                            localStorage.setItem('alertReqError', 'Đăng Ký Thất Bại !!!');
+                            $scope.alertRegister = "Đăng Ký Thất Bại";
+                            console.error('Error registering user:', error);
+                        });
+                    console.log("Người dùng Pass");
+                } else {
+                    console.log("Không thể đăng ký. Người dùng đã tồn tại");
+                }
+                // End tìm username có tồn tại trong database không 
+            }
+
+
+
+        });
+
+
+        // End Controller Register
+
+
+        // Cotnroller Login
+        app.controller("loginCtrl", function ($scope, $rootScope, $http, $routeParams) {
+
+            // show password
+
+            $scope.userLoginPass = null;
+            $scope.usernameError = "";
+            $scope.passwordError = "";
+            $scope.userLogin = [];
+            $scope.showPassword = false;
+            // click showpassword
+            $scope.eyesClick = function () {
+                $scope.showPassword = !$scope.showPassword;
+            };
+
+            $http.get("http://localhost:3000/users")
+                .then(function (reponse) {
+                    $scope.userLogin = reponse.data;
+                    console.log("userloginAPi: ", $scope.userLogin);
+                });
+
+            $scope.login = function (username, password) {
+                var userFound = false;
+                angular.forEach($scope.userLogin, function (user) {
+                    if (user.username === username) {
+                        userFound = true;
+                        if (user.password === password) {
+                            $scope.userLoginPass = user;
+                            // Login Pass
+                            console.log("Đăng Nhập Thành Công: ", $scope.userLoginPass);
+                            // Đăng Nhập thành công lưu thông tin người dùng vào LocalStorage
+                            localStorage.setItem('user_info', JSON.stringify($scope.userLoginPass));
+                            window.location.reload();
+                            $location.path('/');
+                            return;
+                        } else {
+                            // password Wrong
+                            $scope.passwordError = "Mật khẩu người dùng không đúng";
+                            console.log("userArrr = ", user);
+                            return;
+                        }
+                    }
+                });
+
+                if (!userFound) {
+                    // Username not found
+                    $scope.usernameError = "Tên người dùng không đúng";
+                }
+
+            }
+        });
+
+        // End Cotnroller Login
+
+
     </script>
     <script src="js/style.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>

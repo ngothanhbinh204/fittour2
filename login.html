@@ -1,4 +1,4 @@
-<div class="main">
+<div class="main" ng-controller="loginCtrl">
     <!-- Sign up form -->
     <section class="signup my-5">
         <div class="container">
@@ -30,14 +30,17 @@
                                     Và
                                     Tên</label>
                                 (<span class="text-danger">*</span>)
-                                <i ng-show="formRegister.name.$valid"
+                                <i ng-show="formRegister.username.$valid"
                                     class="text-success fw-bold bi bi-check-circle-fill"></i>
-                                <input ng-model="name" name="name" type="text"
-                                    class="form-control border-0 border-bottom" id="name" minlength="5" maxlength="25"
-                                    required>
+                                <input ng-model="username" name="username" type="text"
+                                    class="form-control border-0 border-bottom" id="username" minlength="5"
+                                    maxlength="25" required>
                                 <span class="fw-small text-danger"
-                                    ng-show="formRegister.name.$invalid && formRegister.name.$touched">
+                                    ng-show="formRegister.username.$invalid && formRegister.username.$touched">
                                     Vui lòng nhập tên ...
+                                </span>
+                                <span class="fw-small text-danger" ng-show="usernameError">
+                                    {{usernameError}}
                                 </span>
                             </div>
 
@@ -70,18 +73,19 @@
                                     ng-show="formRegister.password.$error.pattern && !formRegister.password.pristine ">
                                     Mật khẩu phải dạng : Ntbinh123@ - Ít nhất 8 ký tự
                                 </span>
+                                <span class="fw-small text-danger" ng-show="passwordError">
+                                    {{passwordError}}
+                                </span>
                             </div>
-
-
-
 
 
                             <div class="d-flex justify-content-center">
-                                <button ng-disabled="formRegister.name.$invalid || formRegister.password.$invalid "
-                                    type="submit"
+                                <button ng-click="login(username, password)" ng-disabled=" formRegister.username.$invalid
+                                    || formRegister.password.$invalid " type=" submit"
                                     class="btn btn-lg button-home text-white bg-color-second fw-bold btn tn-outline rounded-4 ">Đăng
                                     Nhập</button>
                             </div>
+
 
                         </form>
                     </div>
