@@ -255,6 +255,7 @@
             $scope.showPassword = false;
             $scope.alertReqSuccess = localStorage.getItem('alertReqSuccess');
             $scope.alertReqFail = localStorage.getItem('alertReqFail');
+            $scope.showAlertReqFail = false;
             $scope.alertName = "";
             $scope.alertEmail = "";
             $scope.alertPhone = "";
@@ -274,6 +275,8 @@
                 $scope.showErrorNameMessage = false;
                 $scope.showErrorEmailMessage = false;
                 $scope.showErrorPhoneMessage = false;
+                $scope.showAlertReqFail = false;
+
             }
 
             // Nếu có, hiển thị thông báo và xóa khỏi localStorage
@@ -325,12 +328,13 @@
                                 // tồn Tại -> Lỗi
                                 $scope.alertReqFail = "Tài khoản đã tồn tại";
                                 localStorage.setItem('alertReqFail', 'Tài khoản đã tồn tại');
+                                $scope.showAlertReqFail = true;
+
                                 tonTaiUser = true; // khi tìm thấy người dùng
                                 console.log('Tài khoản tồn tại');
                                 if (user.username === usernameValue) {
                                     $scope.errorNameMessage = "Tên tài khoản đã tồn tại";
                                     $scope.showErrorNameMessage = true; // Hiển thị thông báo lỗi
-                                    //$scope.alertName = "Tên tài khoản đã tồn tại";
                                 }
                                 if (user.email === emailValue) {
                                     $scope.errorEmailMessage = "Email tài khoản đã tồn tại";
@@ -363,7 +367,7 @@
                                     }
                                 })
                                 .catch(error => {
-                                    localStorage.setItem('alertReqError', 'Đăng Ký Thất Bại !!!');
+                                    localStorage.setItem('alertReqFail', 'Đăng Ký Thất Bại !!!');
                                     $scope.alertRegister = "Đăng Ký Thất Bại";
                                     console.error('Error registering user:', error);
                                 });
@@ -376,55 +380,6 @@
             }
 
             // đăng ký END
-
-
-
-            $scope.register2 = function (event) {
-                var tonTaiUser = false; //Biến cờ để theo dõi xem người dùng đã tồn tại hay không
-                event.preventDefault();
-                // Tìm username có tồn tại trong database không 
-                angular.forEach($scope.userRegister, function (user) {
-                    if (user.username === username) {
-                        $scope.alertReqFail = "Tài khoản đã tồn tại. Vui lòng chọn tên người dùng khác";
-                        localStorage.setItem('alertReqFail', 'Tài khoản đã tồn tại. Vui lòng chọn tên người dùng khác');
-                        console.log("Người dùng tồn tại");
-                        tonTaiUser = true; // khi tìm thấy người dùng
-                        return; // stop loop
-                        console.log($scope.userRegister);
-                    }
-                });
-                console.log(tonTaiUser);
-
-                if (!tonTaiUser) {
-                    fetch('http://localhost:3000/users', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify($scope.user),
-                    })
-                        .then(response => {
-                            if (response.ok) {
-                                $scope.alertRegister = "Đăng Ký Thành Công !!!";
-                                localStorage.setItem('alertReqSuccess', 'Đăng Ký Thành Công !!!');
-                            } else {
-                                throw new Error('Đăng ký thất bại');
-                            }
-                        })
-                        .catch(error => {
-                            localStorage.setItem('alertReqError', 'Đăng Ký Thất Bại !!!');
-                            $scope.alertRegister = "Đăng Ký Thất Bại";
-                            console.error('Error registering user:', error);
-                        });
-                    console.log("Người dùng Pass");
-                } else {
-                    console.log("Không thể đăng ký. Người dùng đã tồn tại");
-                }
-                // End tìm username có tồn tại trong database không 
-            }
-
-
-
         });
 
 
