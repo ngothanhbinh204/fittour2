@@ -1,7 +1,7 @@
 <header ng-controller="dulichcoguuCrtl" class="shadow-sm">
     <div class="">
         <div class="row">
-            <div class="d-flex justify-content-between">
+            <div class="d-flex justify-content-around align-items-center">
                 <div class="p-2 bd-highlight ">
                     <a href="index.html"> <img src="img/logoMain.png" alt="">
                     </a>
@@ -84,12 +84,19 @@
                         </div>
                     </nav>
                 </div>
-                <div class="p-2 bd-highlight align-items-center">
-                    <div class="box mt-3">
-                        <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal"
-                            data-bs-target="#searchTours">
-                            <i class="bi bi-search"></i>
-                        </button>
+                <div class="p-2 bd-highlight align-items-center d-flex justify-content-center">
+                    <div class="box">
+                        <!-- Cart -->
+                        <div class="d-flex justify-content-center">
+                            <a class="px-3 text-decoration-none fw-bold fs-4 text-dark" href="#!cart">
+                                <i class="bi bi-bag"></i>
+                            </a>
+
+                            <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal"
+                                data-bs-target="#searchTours">
+                                <i class="bi bi-search"></i>
+                            </button>
+                        </div>
 
                         <div class="modal" id="searchTours">
                             <div class="modal-dialog">

@@ -49,6 +49,7 @@
                 .when("/", { templateUrl: "home.html", controller: "dulichcoguuCrtl" })
                 .when("/register", { templateUrl: "register.html", controller: "dulichcoguuCrtl" })
                 .when("/login", { templateUrl: "login.html", controller: "dulichcoguuCrtl" })
+                .when("/cart", { templateUrl: "cart.html", controller: "dulichcoguuCrtl" })
                 .when("/blog", { templateUrl: "blog.html", controller: "dulichcoguuCrtl" })
                 .when("/contact", { templateUrl: "contact.html", controller: "dulichcoguuCrtl" })
                 .when("/gallery", { templateUrl: "gallery.html", controller: "dulichcoguuCrtl" })
@@ -193,7 +194,7 @@
 
                     // $scope.detailTour = $scope.category.find(item => item.id == $routeParams.id);
                 });
-            $http.get("https://localhost:3000/blogs")
+            $http.get("http://localhost:3000/blogs")
                 .then(function (reponse) {
                     $scope.blogs = reponse.data;
                     // console.log($scope.blogs);
@@ -245,6 +246,89 @@
 
 
         // Controller Other -------------------------------
+        // Controller Cart 
+        app.controller("cartCtrl", function ($scope, $rootScope, $http, $routeParams) {
+
+            $scope.dataCart = JSON.parse(localStorage.getItem('cart')) || [];
+            // $scope.dataCart[index].quantity = 1;
+            $scope.alertCartNull = !$scope.dataCart; // Kiểm tra xem có dữ liệu trong cart hay không
+            if (localStorage.getItem('cart') == null) {
+                $scope.alertCartNull = true;
+                console.log("Cart rỗngg");
+            }
+
+            // giam quantity
+            $scope.giamQuantity = function (index) {
+                if ($scope.dataCart[index].quantity > 1) {
+                    $scope.dataCart[index].quantity--;
+                }
+            }
+
+            // tang quantity
+            $scope.tangQuantity = function (index) {
+                if ($scope.dataCart[index].quantity < 10) {
+                    $scope.dataCart[index].quantity++;
+                }
+            }
+
+            $scope.tinhTong1Tour = function (tour) {
+                return tour.price * tour.quantity;
+            };
+
+            // Tính tổng số tiền của tất cả các tour trong giỏ hàng
+            $scope.tinhTongTien = function () {
+                var tongTien = 0;
+                for (var i = 0; i < $scope.dataCart.length; i++) {
+                    tongTien += $scope.tinhTong1Tour($scope.dataCart[i]);
+                }
+                return tongTien;
+            };
+
+            // Cập nhật tổng số tiền khi có sự thay đổi trong giỏ hàng - hàm callback
+            $scope.$watch('dataCart', function (newValue, oldValue) {
+                $scope.tongTien = $scope.tinhTongTien();
+            }, true);
+            // 
+            $scope.delOneCart = function (index) {
+                // $scope.dataCart = JSON.parse(localStorage.getItem('cart')) || [];
+                $scope.dataCart.splice(index, 1);
+                localStorage.setItem('cart', JSON.stringify($scope.dataCart)); // Cập nhật lại dữ liệu vào localStorage
+            }
+
+            // xóa all cart
+            $scope.deleteCart = function () {
+                localStorage.removeItem('cart');
+                setTimeout(() => {
+                    window.location.reload();
+                }, 100);
+            }
+
+        });
+        // Controller Cart 
+
+        // Controller Product  
+        app.controller("productCtrl", function ($scope, $rootScope, $http, $routeParams) {
+            $scope.quantity = 1;
+            $scope.cart = JSON.parse(localStorage.getItem('cart')) || []; // cart = rỗng hoặc data trong localStorage
+
+
+            $scope.addToCart = function () {
+                // alert("Có");
+                var tour = {
+                    id: $scope.detailTour.id,
+                    name: $scope.detailTour.name,
+                    price: $scope.detailTour.price,
+                    image: $scope.detailTour.image,
+                    quantity: $scope.quantity
+                };
+                $scope.cart.push(tour);
+                localStorage.setItem('cart', JSON.stringify($scope.cart));
+
+                // Reset số lương = 1
+                $scope.quantity = 1;
+            }
+        });
+        // END Controller Product
 
         // Controller Register
         app.controller("registerCtrl", function ($scope, $rootScope, $http, $routeParams) {
@@ -310,6 +394,10 @@
             // đăng ký start
             $scope.register = function (event) {
                 event.preventDefault();
+                // Băm mật khẩu
+                var hashedPassword = CryptoJS.SHA256($scope.user.password).toString();
+                $scope.user.password = hashedPassword;
+
                 $scope.getUserDataRegister(function (userData, error) {
                     if (userData) {
                         $scope.userRegister = userData;
@@ -325,6 +413,8 @@
                             // console.log("username: ", emailValue);
                             // console.log("username: ", phoneValue);
                             if (user.username === usernameValue || user.email === emailValue || user.phone === phoneValue) {
+                                $scope.user.password = user.password;
+                                console.log($scope.user.password);
                                 // tồn Tại -> Lỗi
                                 $scope.alertReqFail = "Tài khoản đã tồn tại";
                                 localStorage.setItem('alertReqFail', 'Tài khoản đã tồn tại');
@@ -362,6 +452,7 @@
                                     if (response.ok) {
                                         $scope.alertRegister = "Đăng Ký Thành Công !!!";
                                         localStorage.setItem('alertReqSuccess', 'Đăng Ký Thành Công !!!');
+                                        console.log($scope.user);
                                     } else {
                                         throw new Error('Đăng ký thất bại');
                                     }
@@ -409,6 +500,8 @@
 
             $scope.login = function (username, password) {
                 var userFound = false;
+                var hashedPasswordLogin = CryptoJS.SHA256(password).toString();
+                password = hashedPasswordLogin;
                 angular.forEach($scope.userLogin, function (user) {
                     if (user.username === username) {
                         userFound = true;
@@ -450,6 +543,7 @@
 
     </script>
     <script src="js/style.js"></script>
+    <script src="node_modules/crypto-js/crypto-js.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
 
 </body>

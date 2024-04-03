@@ -1,0 +1,116 @@
+<section class="h-100 h-custom" style="background-color: #d2c9ff;" ng-controller="cartCtrl">
+    <div class="container py-5 h-100 ">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12">
+                <div class="card card-registration card-registration-2 shadow" style="border-radius: 15px;">
+                    <div class="card-body p-0">
+                        <div class="row g-0">
+                            <div class="col-lg-8">
+                                <div class="p-5">
+                                    <div class="d-flex justify-content-between align-items-center mb-5">
+                                        <h1 class="fw-bold mb-0 text-black">Tour - Cart</h1>
+                                        <h6 class="mb-0 text-muted">{{dataCart.length}} tours</h6>
+                                    </div>
+                                    <hr class="my-4">
+
+                                    <!-- Nếu không có Tour => Hiện lỗi -->
+
+                                    <div class="my-5" ng-show="alertCartNull ">
+                                        <h5 class="text-muted text-center">Chưa Có Tour Nào Trong Giỏ Hàng</h5>
+                                        <h6 class="text-muted text-center "><a href="#!/tours"
+                                                class=" fs-4 text-decoration-none text-danger">
+                                                <i class=" fw-bold bi-arrow-return-left me-2"></i>Đặt Vé Ngay</a></h6>
+                                        <div class="boximg d-flex">
+                                            <img class="mx-auto" width="50%" src="img/banner-cartnull.jpg" alt="">
+                                        </div>
+                                    </div>
+
+                                    <!-- Show cart  -->
+                                    <div class="row mb-4 d-flex justify-content-between align-items-center"
+                                        ng-repeat="tour in dataCart">
+                                        <div class="col-md-2 col-lg-2 col-xl-2">
+                                            <img src="img/{{tour.image}}" class="img-fluid rounded-3"
+                                                alt="{{tour.name}}">
+                                        </div>
+                                        <div class="col-md-3 col-lg-3 col-xl-3">
+                                            <h6 class="text-muted">{{tour.name}}</h6>
+                                        </div>
+                                        <div class="col-md-4 col-lg-4 col-xl-3 d-flex">
+                                            <button class="btn btn-link px-2" ng-click="giamQuantity($index)">
+                                                <i class="bi bi-dash"></i>
+                                            </button>
+                                            <input id="form1" min="0" max="10" ng-model="tour.quantity" name="quantity"
+                                                type="number" class="form-control form-control-sm text-center" />
+                                            <button class="btn btn-link px-2" ng-click="tangQuantity($index)">
+                                                <i class="bi bi-plus"></i>
+                                            </button>
+                                        </div>
+                                        <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                                            <h6 class="mb-0"> {{tinhTong1Tour(tour) | number}} VNĐ</h6>
+                                        </div>
+                                        <div class="col-md-1 col-lg-1 col-xl-1 text-end">
+                                            <a href="" ng-click="delOneCart($index)" class="text-muted fs-4"><i
+                                                    class="bi bi-x"></i></a>
+                                        </div>
+                                    </div>
+
+
+                                    <hr class="my-4">
+                                    <!-- Show cart  -->
+
+                                    <div ng-hide="alertCartNull" class="pt-5 d-flex justify-content-between">
+                                        <h6 class="mb-0"><a href="#!/tours" class="text-body text-decoration-none">
+                                                <i class=" fw-bold bi-arrow-return-left me-2"></i>Quay lại tour</a></h6>
+                                        <h6 class="mb-0"><a ng-click="deleteCart()" href=""
+                                                class="text-body text-decoration-none"><i
+                                                    class="bi bi-trash3 me-2"></i>Xóa giỏ hàng</a></h6>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            <div class="col-lg-4 bg-grey">
+                                <div class="p-5">
+                                    <h3 class="fw-bold mb-5 mt-2 pt-1">Tổng Cộng</h3>
+                                    <hr class="my-4">
+
+                                    <div class="d-flex justify-content-between mb-4">
+                                        <h5 class="text-uppercase">Tours : {{dataCart.length}}</h5>
+                                        <h5 class="fw">€ {{tongTien | number}}</h5>
+                                    </div>
+
+
+
+                                    <h5 class="text-uppercase mb-3">COUPOND</h5>
+
+                                    <div class="mb-5">
+                                        <div class="form-outline">
+                                            <input type="text" id="form3Examplea2"
+                                                class="form-control form-control-lg" />
+                                            <label class="form-label" for="form3Examplea2">Nhập Code Để Giảm Giá
+                                                Tour</label>
+                                        </div>
+                                    </div>
+
+                                    <hr class="my-4">
+
+                                    <div class="d-flex justify-content-between mb-5">
+                                        <h5 class="text-uppercase">Thành Tiền</h5>
+                                        <h5 class="fw-bold text-success ">€ {{ tongTien | number}}</h5>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <button type="button"
+                                            class="shadow w-100 btn bg-color-second text-white btn-block btn-lg"
+                                            data-mdb-ripple-color="dark">Thanh Toán</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,5 +1,5 @@
 <section class="mb-5">
-    <div class="container-xl">
+    <div class="container-xl" ng-controller="productCtrl">
         <div class="row">
             <div class="col-sm-12 col-lg-8">
                 <div class="box-banner mb-3">
@@ -35,7 +35,8 @@
 
                         <div class="col p-2 form d-flex justify-content-center">
                             <div class="box-form color-main bg-main px-4 py-1 rounded-2 my-auto ">
-                                <span class="fw-bold my-auto"><i class="bi bi-file-earmark-text fs-3"></i>Form</span>
+                                <span class="fw-bold my-auto"><i
+                                        class="bi bi-file-earmark-text fs-3 px-2"></i>Form</span>
                             </div>
                         </div>
                     </div>
@@ -272,12 +273,15 @@
                                     </div>
                                     <p class="mb-3 fs-5">Giá từ</p>
                                     <p class="fs-2 fw-bold">{{detailTour.price | number}} VNĐ</p>
+                                    {{detailTour.id}}
                                     <div class="box-icon mb-3">
                                         <img src="img/mess.jpg" alt="">
                                         <img src="img/phone.jpg" alt="">
                                     </div>
-                                    <button class="btn btn-primary fs-4 fw-bold" type="button">Liên hệ Hotline
-                                        Zalo</button>
+                                    <a href="#!cart">
+                                        <button ng-click="addToCart()" class="btn btn-primary fs-4 fw-bold"
+                                            type="button">Add To Cart</button>
+                                    </a>
 
                                 </div>
                             </div>
