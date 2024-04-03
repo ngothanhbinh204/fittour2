@@ -346,7 +346,7 @@
     {
       "id": 2,
       "username": "admin",
-      "password": "Ntb1412@",
+      "password": "Ntbinh1412@",
       "email": "binhntps30045@fpt.edu.vn",
       "phone": "0339049735"
     },
@@ -356,6 +356,13 @@
       "password": "Ntbinh1412@",
       "email": "ntbinh14122004@gmail.com",
       "phone": "0339049738"
+    },
+    {
+      "id": "6497",
+      "username": "ngothanhbinh2",
+      "password": "Ntbinh1412@",
+      "email": "binhsdsdntps30045@gmail.com",
+      "phone": "0339044444"
     }
   ]
 }

@@ -58,7 +58,7 @@
                 .when("/tours", { templateUrl: "tours.html", controller: "dulichcoguuCrtl" })
                 .when("/detail/:id", { templateUrl: "detail.html", controller: "dulichcoguuCrtl" })
                 .otherwise({ templateUrl: "home.html", controller: "dulichcoguuCrtl" })
-        })
+        });
 
         // app.directive('customValidator', function () {
         //     return {
@@ -387,7 +387,7 @@
 
 
         // Cotnroller Login
-        app.controller("loginCtrl", function ($scope, $rootScope, $http, $routeParams) {
+        app.controller("loginCtrl", function ($scope, $rootScope, $http, $routeParams, $location) {
 
             // show password
 
@@ -418,8 +418,15 @@
                             console.log("Đăng Nhập Thành Công: ", $scope.userLoginPass);
                             // Đăng Nhập thành công lưu thông tin người dùng vào LocalStorage
                             localStorage.setItem('user_info', JSON.stringify($scope.userLoginPass));
-                            window.location.reload();
-                            $location.path('/');
+                            //window.location.reload();
+
+                            $location.url('/'); // Chuyển hướng tới trang index
+                            // setTimeOut sau khi chuyển trang -> reload
+                            setTimeout(function () {
+                                window.location.reload(); // Reload trang sau 100ms (hoặc một khoảng thời gian ngắn đủ để trình duyệt bắt đầu chuyển hướng)
+                            }, 500);
+                            // window.location.reload();
+                            $window.location.href = '/';
                             return;
                         } else {
                             // password Wrong
